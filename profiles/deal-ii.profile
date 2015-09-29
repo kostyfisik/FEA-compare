@@ -2,7 +2,7 @@ name: Deal II
 website: www.dealii.org
 license: GPL
 GUI: No
-Wilkinson Prize: 2007 
+Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]
 Community: [[https://groups.google.com/forum/#!forum/dealii][Google Group]]
 Documentation: 50+ tutorials, 50+ video lectures, Doxygen
 
@@ -39,13 +39,14 @@ Boundary elements solver: [[https://www.dealii.org/developer/doxygen/deal.II/ste
 
     Matrix-free
 
-matrix-free save memory:
+matrix-free: Yes
+matrix-free save memory: Yes
 matrix-free speed-up: [[https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix][Yes]]
 
     Used language
 
-Native language:
-Bindings to language:
+Native language: C++
+Bindings to language: No
 
     Other
 

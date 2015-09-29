@@ -68,4 +68,4 @@ disclaimer = " This is an auto generated comparison from manually filled *.profi
 with open('README.org', "w") as myfile:
     myfile.write(disclaimer+all_table)
 
-print(all_profiles)
+#print(all_profiles)
