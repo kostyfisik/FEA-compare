@@ -1,0 +1,8 @@
+ This is an auto generated comparison from manually filled *.profiles for FEA software.
+
+|  |Deal II|libMesh|
+|--+--+--|
+|website|www.dealii.org|http://libmesh.github.io/|
+|license|GPL|GPL|
+|GUI|No|No|
+|mesh|quad only|  |
