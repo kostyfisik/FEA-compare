@@ -8,11 +8,11 @@
 |website:|www.dealii.org|http://libmesh.github.io/|
 |license:|GPL|GPL|
 |GUI:|No|No|
-|/Mesh/
+| /Mesh/ 
 |mesh elements:|quad only|  |
 |mesh mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|  |
 |mesh generation:|external+predefined shapes|  |
-|/Parallel possibilities/
+| /Parallel possibilities/ 
 |MPI:|  |  |
 |threads:|  |  |
 |OpenMP:|  |  |

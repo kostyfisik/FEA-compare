@@ -54,7 +54,7 @@ delimeter += "|"
 all_table = header + "\n" + delimeter + "\n"
 for key in all_keys[1:]:
     if not key[-1]==':':
-        all_table += "|/"+key+"/\n"
+        all_table += "| /"+key+"/ \n"
         continue
     all_table += "|"+key
     for profile in all_profiles:
