@@ -2,12 +2,16 @@ name:
 website:
 license:
 GUI:
+Community:
+Documentation:
 
     Mesh
 
 mesh elements:
 mesh mapping:
 mesh generation:
+mesh input\output:
+mesh adaptive-refinement:
 
     Parallel possibilities
 
@@ -16,3 +20,30 @@ threads:
 OpenMP:
 OpenCL:
 CUDA:
+
+    Solver
+
+Dimension:
+FE:
+Predifined equations:
+Visualization:
+Output format:
+Boundary elements solver:
+
+    Linear algebra
+
+Used libs:
+Iterative matrix solvers:
+Preconditioners:
+
+    Matrix-free
+
+matrix-free save memory:
+matrix-free speed-up:
+
+    Used language
+
+Native language:
+Bindings to language:
+
+    Other
