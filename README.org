@@ -3,9 +3,9 @@
 ** Profile format
  Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented) .
 
-|  |Deal II|COMSOL Multiphysics(R)|libMesh|FEniCS|
+|  |Deal II|COMSOL(R)|libMesh|FEniCS|
 |--+--+--+--+--|
-|website:|www.dealii.org|https://www.comsol.com/products|http://libmesh.github.io/|http://fenicsproject.org/|
+|website:|www.dealii.org|https://www.comsol.com|http://libmesh.github.io/|http://fenicsproject.org/|
 |license:|GPL||GPL||
 |GUI:|No|Yes|No||
 |Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||  ||
