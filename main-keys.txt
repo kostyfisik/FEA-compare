@@ -1,14 +1,18 @@
-name
-website
-license
-GUI
-mesh
-mesh elements
-mesh mapping
-mesh generation
-parallel possibilities
-MPI
-threads
-OpenMP
-OpenCL
-Cuda
+name:
+website:
+license:
+GUI:
+
+    mesh
+
+mesh elements:
+mesh mapping:
+mesh generation:
+
+    parallel possibilities
+
+MPI:
+threads:
+OpenMP:
+OpenCL:
+CUDA:

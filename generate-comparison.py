@@ -28,7 +28,7 @@ for dirname, dirnames, filenames in os.walk('./profiles/'):
                 for line in f:
                     if ':' in line and not line[0] == '#':
                         key, value = line.split(':',1)
-                        profile[key.strip()] = value.strip()
+                        profile[key.strip()+':'] = value.strip()
             all_profiles.append(profile)
 all_keys = []
 # Read main keys
@@ -41,7 +41,7 @@ with open('main-keys.txt') as f:
 for profile in all_profiles:
     for key in profile.keys():
         if not key in all_keys:
-            all_keys.append(key)
+            all_keys.append(key+":")
 # Generate Org-mode table
 header = "|  "
 delimeter = "|--"
@@ -54,6 +54,9 @@ delimeter += "|"
 all_table = header + "\n" + delimeter + "\n"
 for key in all_keys[1:]:
     all_table += "|"+key
+    if not key[-1]==':':
+        all_table += "\n"
+        continue
     for profile in all_profiles:
         value = profile.get(key)
         if not value==None:
@@ -61,6 +64,6 @@ for key in all_keys[1:]:
         else:
             all_table += "|  "
     all_table += "|\n"
-disclaimer = " This is an auto generated comparison from manually filled *.profiles for FEA software.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards.\n\n"
+disclaimer = " This is an auto generated comparison from manually filled *.profiles for FEA software.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not\n\n"
 with open('README.org', "w") as myfile:
     myfile.write(disclaimer+all_table)
