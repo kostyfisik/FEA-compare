@@ -6,3 +6,9 @@ mesh
 mesh elements
 mesh mapping
 mesh generation
+parallel possibilities
+MPI
+threads
+OpenMP
+OpenCL
+Cuda

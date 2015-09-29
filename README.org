@@ -1,11 +1,20 @@
  This is an auto generated comparison from manually filled *.profiles for FEA software.
 
+** Profile format
+ Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards.
+
 |  |Deal II|libMesh|
 |--+--+--|
 |website|www.dealii.org|http://libmesh.github.io/|
 |license|GPL|GPL|
 |GUI|No|No|
-|mesh||  |
+|mesh|  |  |
 |mesh elements|quad only|  |
 |mesh mapping|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|  |
 |mesh generation|external+predefined shapes|  |
+|parallel possibilities|  |  |
+|MPI|  |  |
+|threads|  |  |
+|OpenMP|  |  |
+|OpenCL|  |  |
+|Cuda|  |  |
