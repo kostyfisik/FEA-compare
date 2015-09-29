@@ -3,13 +3,13 @@ website:
 license:
 GUI:
 
-    mesh
+    Mesh
 
 mesh elements:
 mesh mapping:
 mesh generation:
 
-    parallel possibilities
+    Parallel possibilities
 
 MPI:
 threads:
