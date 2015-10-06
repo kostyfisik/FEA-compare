@@ -8,37 +8,38 @@
 |website:|www.dealii.org|https://www.comsol.com|http://libmesh.github.io/|http://fenicsproject.org/|
 |license:|GPL||GPL||
 |GUI:|No|Yes|No||
-|Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||  ||
-|Documentation:|50+ tutorials, 50+ video lectures, Doxygen||  ||
+|Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]||
+|Documentation:|50+ tutorials, 50+ video lectures, Doxygen||Doxygen, 40+ example codes||
 | *Mesh* 
-|mesh elements:|quad only||  ||
-|mesh mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]||  ||
-|mesh generation:|external+predefined shapes|Built-in|  ||
-|mesh input\output:|||  ||
-|mesh adaptive-refinement:|h, p, and hp for CG and DG||  ||
+|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.||
+|mesh mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]||||
+|mesh generation:|external+predefined shapes|Built-in|Built-in||
+|mesh input\output:|||||
+|mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp||
 | *Parallel possibilities* 
-|MPI:|Yes (up to 16k pocesses)||  ||
-|threads:|Threading Build Blocks||  ||
-|OpenMP:|No||  ||
-|OpenCL:|No||  ||
-|CUDA:|No||  ||
+|MPI:|Yes (up to 16k pocesses)||Yes||
+|threads:|Threading Build Blocks||||
+|OpenMP:|No||||
+|OpenCL:|No||||
+|CUDA:|No||||
 | *Solver* 
-|Dimension:|1/2/3D||  ||
-|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.||  ||
-|Predifined equations:|Laplace?|Yes, via modules|  ||
-|Visualization:|External (export to *.vtk and many others)|Built-in|  ||
-|Output format:|*.vtk||  ||
-|Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]||  ||
+|Dimension:|1/2/3D||2D\3D||
+|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.||Lagrange, Hierarchic, Discontinuous Monomials||
+|Predifined equations:|Laplace?|Yes, via modules|No||
+|Visualization:|External (export to *.vtk and many others)|Built-in|No||
+|Output format:|*.vtk||||
+|Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]||||
 | *Linear algebra* 
-|Used libs:|Built-in + Trilinos, PETSc, and METIS||  ||
-|Iterative matrix solvers:|||  ||
-|Preconditioners:|Multigrid||  ||
+|Used libs:|Built-in + Trilinos, PETSc, and METIS||PETSc, Trilinos, LASPack,  SLEPc||
+|Iterative matrix solvers:|||LASPack serial, PETSc parallel||
+|Preconditioners:|Multigrid||LASPack serial, PETSc parallel||
 | *Matrix-free* 
-|matrix-free:|Yes||  ||
-|matrix-free save memory:|Yes||  ||
-|matrix-free speed-up:|[[https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix][Yes]]||  ||
+|matrix-free:|Yes||||
+|matrix-free save memory:|Yes||||
+|matrix-free speed-up:|[[https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix][Yes]]||||
 | *Used language* 
-|Native language:|C++||  ||
-|Bindings to language:|No||  ||
+|Native language:|C++||C++||
+|Bindings to language:|No||||
 | *Other* 
 |Wilkinson Prize:|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|  |  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|
+|mesh operation:|  |  |distort/translate/rotate/scale|  |
