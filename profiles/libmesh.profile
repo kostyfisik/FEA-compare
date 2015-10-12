@@ -17,7 +17,7 @@ mesh operation: distort/translate/rotate/scale
     Parallel possibilities
 
 MPI: Yes
-threads:
+threads: Yes
 OpenMP:
 OpenCL:
 CUDA:

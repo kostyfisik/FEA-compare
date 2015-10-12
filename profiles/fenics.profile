@@ -1,22 +1,23 @@
 name:  FEniCS
 website: http://fenicsproject.org/
-license:
-GUI:
-Community:
-Documentation:
+license: GNU GPL\LGPL
+GUI: Postprocessing only 
+Community: Mailing list
+Documentation: Tutorial, 700-page book
 Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]
+Binary: Win, Linux (Debian\Ubuntu), Mac
 
     Mesh
 
-mesh elements:
+mesh elements: intervals, triangles, tetrahedra
 mesh mapping:
 mesh generation:
 mesh input\output:
-mesh adaptive-refinement:
+mesh adaptive-refinement: Yes (h only?)
 
     Parallel possibilities
 
-MPI:
+MPI: Yes?
 threads:
 OpenMP:
 OpenCL:
@@ -24,16 +25,17 @@ CUDA:
 
     Solver
 
-Dimension:
-FE:
+Dimension: 1/2/3D
+FE: Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart
 Predifined equations:
-Visualization:
-Output format:
+Visualization: Buil-in simple plotting + External
+Output format: VTK
 Boundary elements solver:
+Automated assembly: Yes
 
     Linear algebra
 
-Used libs:
+Used libs:  PETSc, Trilinos/Epetra, uBLAS, and MTL4.
 Iterative matrix solvers:
 Preconditioners:
 
@@ -45,7 +47,7 @@ matrix-free speed-up:
 
     Used language
 
-Native language:
-Bindings to language:
+Native language: C++
+Bindings to language: Python
 
     Other
