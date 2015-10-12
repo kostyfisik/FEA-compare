@@ -6,31 +6,31 @@
 |  |Deal II|COMSOL(R)|libMesh|FEniCS|
 |--+--+--+--+--|
 |website:|www.dealii.org|https://www.comsol.com|http://libmesh.github.io/|http://fenicsproject.org/|
-|license:|GPL||GPL||
-|GUI:|No|Yes|No||
-|Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]||
-|Documentation:|50+ tutorials, 50+ video lectures, Doxygen||Doxygen, 40+ example codes||
+|license:|GPL||GPL|GNU GPL\LGPL|
+|GUI:|No|Yes|No|Postprocessing only|
+|Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|Mailing list|
+|Documentation:|50+ tutorials, 50+ video lectures, Doxygen||Doxygen, 40+ example codes|Tutorial, 700-page book|
 | *Mesh* 
-|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.||
+|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.|intervals, triangles, tetrahedra|
 |mesh mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]||||
 |mesh generation:|external+predefined shapes|Built-in|Built-in||
 |mesh input\output:|||||
-|mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp||
+|mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp|Yes (h only?)|
 | *Parallel possibilities* 
-|MPI:|Yes (up to 16k pocesses)||Yes||
-|threads:|Threading Build Blocks||||
+|MPI:|Yes (up to 16k pocesses)||Yes|Yes?|
+|threads:|Threading Build Blocks||Yes||
 |OpenMP:|No||||
 |OpenCL:|No||||
 |CUDA:|No||||
 | *Solver* 
-|Dimension:|1/2/3D||2D\3D||
-|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.||Lagrange, Hierarchic, Discontinuous Monomials||
+|Dimension:|1/2/3D||2D\3D|1/2/3D|
+|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.||Lagrange, Hierarchic, Discontinuous Monomials|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart|
 |Predifined equations:|Laplace?|Yes, via modules|No||
-|Visualization:|External (export to *.vtk and many others)|Built-in|No||
-|Output format:|*.vtk||||
+|Visualization:|External (export to *.vtk and many others)|Built-in|No|Buil-in simple plotting + External|
+|Output format:|*.vtk|||VTK|
 |Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]||||
 | *Linear algebra* 
-|Used libs:|Built-in + Trilinos, PETSc, and METIS||PETSc, Trilinos, LASPack,  SLEPc||
+|Used libs:|Built-in + Trilinos, PETSc, and METIS||PETSc, Trilinos, LASPack,  SLEPc|PETSc, Trilinos/Epetra, uBLAS, and MTL4.|
 |Iterative matrix solvers:|||LASPack serial, PETSc parallel||
 |Preconditioners:|Multigrid||LASPack serial, PETSc parallel||
 | *Matrix-free* 
@@ -38,8 +38,10 @@
 |matrix-free save memory:|Yes||||
 |matrix-free speed-up:|[[https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix][Yes]]||||
 | *Used language* 
-|Native language:|C++||C++||
-|Bindings to language:|No||||
+|Native language:|C++||C++|C++|
+|Bindings to language:|No|||Python|
 | *Other* 
 |Wilkinson Prize:|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|  |  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|
 |mesh operation:|  |  |distort/translate/rotate/scale|  |
+|Binary:|  |  |  |Win, Linux (Debian\Ubuntu), Mac|
+|Automated assembly:|  |  |  |Yes|
