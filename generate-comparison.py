@@ -43,7 +43,7 @@ for profile in all_profiles:
         if not key in all_keys:
             all_keys.append(key)
 # Generate Org-mode table
-header = "|  "
+header = "|Feature"
 delimeter = "|--"
 for profile in all_profiles:
     header += '|'+profile[all_keys[0]]
