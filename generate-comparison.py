@@ -72,6 +72,18 @@ with open('README.org', "w") as myfile:
 import os
 # sudo gem install org-ruby
 
-os.system("cat style.txt > table.html")
-os.system("org-ruby --translate html    README.org >> table.html")
-os.system('echo "</body></html>" >> table.html')
+os.system("cat style.txt > table.tmp")
+os.system("org-ruby --translate html    README.org >> table.tmp")
+os.system('echo "</body></html>" >> table.tmp')
+
+count = 0
+with open('table.html', 'w') as new_f:
+    with open("table.tmp") as f:
+        for line in f:            
+            if '<tr>' in line:
+                count += 1
+            if count % 2 == 0:
+                line = line.replace('<tr>','<tr class="alt">')
+            new_f.write(line)
+            
+os.system('rm -f table.tmp')
