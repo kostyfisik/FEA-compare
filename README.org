@@ -9,13 +9,14 @@
 |license:|GPL||GPL|GNU GPL\LGPL|
 |GUI:|No|Yes|No|Postprocessing only|
 |Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|Mailing list|
-|Documentation:|50+ tutorials, 50+ video lectures, Doxygen||Doxygen, 40+ example codes|Tutorial, 700-page book|
+|Documentation:|50+ tutorials, 50+ video lectures, Doxygen||Doxygen, 40+ example codes|Tutorial, demos (how many?), 700-page book|
 | *Mesh* 
-|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.|intervals, triangles, tetrahedra|
-|mesh mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]||||
-|mesh generation:|external+predefined shapes|Built-in|Built-in||
-|mesh input\output:|||||
-|mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp|Yes (h only?)|
+|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.|intervals, triangles, tetrahedra, quads, hexes|
+|mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|||?|
+|mesh generation:|external+predefined shapes|Built-in|Built-in|Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)|
+|mesh input\output:||||XDMF (and FEniCS XML)|
+|mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp|Only h|
+|automatic mesh partitioning:||||Yes|
 | *Parallel possibilities* 
 |MPI:|Yes (up to 16k pocesses)||Yes|Yes?|
 |threads:|Threading Build Blocks||Yes||
@@ -24,13 +25,14 @@
 |CUDA:|No||||
 | *Solver* 
 |Dimension:|1/2/3D||2D\3D|1/2/3D|
-|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.||Lagrange, Hierarchic, Discontinuous Monomials|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart|
+|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.||Lagrange, Hierarchic, Discontinuous Monomials|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any|
 |Predifined equations:|Laplace?|Yes, via modules|No||
 |Visualization:|External (export to *.vtk and many others)|Built-in|No|Buil-in simple plotting + External|
-|Output format:|*.vtk|||VTK|
-|Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]||||
+|Output format:|*.vtk|||VTK(.pvd, .vtu) and XDMF/HDF5|
+|Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]|||No|
+|Use multiple meshes:|[[http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement][Yes, autorefined from same initial mesh for each variable of a coupled problem]]|  |  |Yes, including non-matching meshes|
 | *Linear algebra* 
-|Used libs:|Built-in + Trilinos, PETSc, and METIS||PETSc, Trilinos, LASPack,  SLEPc|PETSc, Trilinos/Epetra, uBLAS, and MTL4.|
+|Used libs:|Built-in + Trilinos, PETSc, and METIS||PETSc, Trilinos, LASPack,  SLEPc|PETSc, Trilinos/TPetra, Eigen.|
 |Iterative matrix solvers:|||LASPack serial, PETSc parallel||
 |Preconditioners:|Multigrid||LASPack serial, PETSc parallel||
 | *Matrix-free* 
@@ -43,5 +45,6 @@
 | *Other* 
 |Wilkinson Prize:|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|  |  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|
 |mesh operation:|  |  |distort/translate/rotate/scale|  |
-|Binary:|  |  |  |Win, Linux (Debian\Ubuntu), Mac|
+|mesh check:|  |  |  |intersections (collision testing)|
+|Binary:|  |  |  |Linux (Debian\Ubuntu), Mac|
 |Automated assembly:|  |  |  |Yes|
