@@ -80,12 +80,20 @@ count = 1
 with open('table.html', 'w') as new_f:
     with open("table.tmp") as f:
         for line in f:            
+            if '<b>' in line:
+                count = 0
             if '<tr>' in line:
                 count += 1
-            if '<b>' in line:
-                count = 1
-            if count % 2 == 0:
-                line = line.replace('<tr>','<tr class="alt">')
+                if count % 2 == 0:
+                    line = line.replace('<tr>','<tr class="alternateRow">')
+                else:
+                    line = line.replace('<tr>','<tr class="normalRow">')
+            if '<table>' in line:
+                line = '<div id="tableContainer" class="tableContainer">\n<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">\n<thead class="fixedHeader">\n'
+            if '<th>' in line:
+                line += '\n</thead>\n<tbody class="scrollContent">\n'
             new_f.write(line)
-            
+            if '</table>' in line:
+                line = "</tbody>\n</table>\n</div>\n"
+
 os.system('rm -f table.tmp')
