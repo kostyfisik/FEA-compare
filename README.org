@@ -14,10 +14,11 @@
 |mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.|intervals, triangles, tetrahedra, quads, hexes|
 |mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|||?|
 |mesh generation:|external+predefined shapes|Built-in|Built-in|Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)|
-|mesh input\output:||||XDMF (and FEniCS XML)|
 |mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp|Only h|
-|automatic mesh partitioning:||||Yes|
+|mesh input\output:||||XDMF (and FEniCS XML)|
+|mesh check:|  |  |  |intersections (collision testing)|
 | *Parallel possibilities* 
+|automatic mesh partitioning:||||Yes|
 |MPI:|Yes (up to 16k pocesses)||Yes|Yes?|
 |threads:|Threading Build Blocks||Yes||
 |OpenMP:|No||||
@@ -45,6 +46,5 @@
 | *Other* 
 |Wilkinson Prize:|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|  |  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|
 |mesh operation:|  |  |distort/translate/rotate/scale|  |
-|mesh check:|  |  |  |intersections (collision testing)|
 |Binary:|  |  |  |Linux (Debian\Ubuntu), Mac|
 |Automated assembly:|  |  |  |Yes|
