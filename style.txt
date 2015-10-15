@@ -17,7 +17,7 @@ body {
 	padding: 0
 }
 
-table, td, a {
+table, td {
 	color: #000;
 	font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif
 }
@@ -60,7 +60,7 @@ html>body div.tableContainer {
 /* define width of table. IE browsers only                 */
 div.tableContainer table {
 	float: left;
-	width: 90vw-16px
+	width: 90vw
 }
 
 /* define width of table. Add 16px to width for scrollbar.           */
@@ -76,6 +76,7 @@ html>body div.tableContainer table {
 /* Ex: parent element DIV with a class of tableContainer has an overflow property set to auto */
 thead.fixedHeader tr {
 	position: relative
+
 }
 
 /* set THEAD element to have block level attributes. All other non-IE browsers            */
@@ -91,25 +92,7 @@ thead.fixedHeader th {
 	border-right: 1px solid #B74;
 	border-top: 1px solid #EB8;
 	font-weight: normal;
-	padding: 4px 3px;
 	text-align: left
-}
-
-/* make the A elements pretty. makes for nice clickable headers                */
-thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {
-	color: #FFF;
-	display: block;
-	text-decoration: none;
-	width: 100%
-}
-
-/* make the A elements pretty. makes for nice clickable headers                */
-/* WARNING: swapping the background on hover may cause problems in WinIE 6.x   */
-thead.fixedHeader a:hover {
-	color: #FFF;
-	display: block;
-	text-decoration: underline;
-	width: 100%
 }
 
 /* define the table content to be scrollable                                              */
@@ -150,33 +133,17 @@ tr b {
 
 /* define width of TH elements: 1st, 2nd, and 3rd respectively.          */
 /* Add 16px to last TH for scrollbar padding. All other non-IE browsers. */
-/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors        */
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors --
+  --*/
 html>body thead.fixedHeader th {
-	width: 200px
+       width: 18vw
 }
-
-html>body thead.fixedHeader th + th {
-	width: 240px
-}
-
-html>body thead.fixedHeader th + th + th {
-	width: 316px
-}
-
-/* define width of TD elements: 1st, 2nd, and 3rd respectively.          */
-/* All other non-IE browsers.                                            */
-/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors        */
 html>body tbody.scrollContent td {
-	width: 200px
+       width: 18vw
 }
 
-html>body tbody.scrollContent td + td {
-	width: 240px
-}
 
-html>body tbody.scrollContent td + td + td {
-	width: 300px
-}
+
 -->
 </style>
 

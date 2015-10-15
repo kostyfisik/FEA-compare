@@ -9,16 +9,16 @@ Binary: Linux (Debian\Ubuntu), Mac
 
     Mesh
 
-mesh elements: intervals, triangles, tetrahedra, quads, hexes
-mesh high-order mapping: ?
+mesh elements: intervals, triangles, tetrahedra (quads, hexes - work in progress)
+mesh high-order mapping: (Any - work in progress)
 mesh generation: Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)
 mesh input\output: XDMF (and FEniCS XML)
 mesh adaptive-refinement: Only h
-automatic mesh partitioning: Yes
 mesh check: intersections (collision testing)
 
     Parallel possibilities
 
+automatic mesh partitioning: Yes
 MPI: Yes?
 threads:
 OpenMP:

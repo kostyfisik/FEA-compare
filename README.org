@@ -11,8 +11,8 @@
 |Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]||[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|Mailing list|
 |Documentation:|50+ tutorials, 50+ video lectures, Doxygen||Doxygen, 40+ example codes|Tutorial, demos (how many?), 700-page book|
 | *Mesh* 
-|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.|intervals, triangles, tetrahedra, quads, hexes|
-|mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|||?|
+|mesh elements:|quad only||Tria, Quad, Tetra, Prism, etc.|intervals, triangles, tetrahedra (quads, hexes - work in progress)|
+|mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|||(Any - work in progress)|
 |mesh generation:|external+predefined shapes|Built-in|Built-in|Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)|
 |mesh adaptive-refinement:|h, p, and hp for CG and DG||h, p, mached hp, singular hp|Only h|
 |mesh input\output:||||XDMF (and FEniCS XML)|
