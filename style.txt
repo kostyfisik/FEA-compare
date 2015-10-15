@@ -29,7 +29,7 @@ tr.alt td {
     background-color: #EAF2D3;
 }
 tr b {
-    background-color: #A7C942;
+    background-color: #FFFFFF;
     color: #ff0000;
     <!-- color: #000000; -->
     <!-- background-color: #EAF2D3; -->

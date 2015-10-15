@@ -76,12 +76,14 @@ os.system("cat style.txt > table.tmp")
 os.system("org-ruby --translate html    README.org >> table.tmp")
 os.system('echo "</body></html>" >> table.tmp')
 
-count = 0
+count = 1
 with open('table.html', 'w') as new_f:
     with open("table.tmp") as f:
         for line in f:            
             if '<tr>' in line:
                 count += 1
+            if '<b>' in line:
+                count = 1
             if count % 2 == 0:
                 line = line.replace('<tr>','<tr class="alt">')
             new_f.write(line)
