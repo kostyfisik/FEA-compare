@@ -69,3 +69,6 @@ with open('README.org', "w") as myfile:
     myfile.write(disclaimer+all_table)
 
 #print(all_profiles)
+import os
+# sudo gem install org-ruby
+os.system("org-ruby --translate html    README.org > table.html")
