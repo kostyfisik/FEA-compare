@@ -8,11 +8,12 @@ Documentation: Doxygen, 40+ example codes
     Mesh
 
 mesh elements: Tria, Quad, Tetra, Prism, etc.
-mesh mapping:
+mesh high-order mapping:
 mesh generation: Built-in
 mesh input\output:
 mesh adaptive-refinement: h, p, mached hp, singular hp
 mesh operation: distort/translate/rotate/scale
+automatic mesh partitioning:
 
     Parallel possibilities
 

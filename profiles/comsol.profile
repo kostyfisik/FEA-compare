@@ -8,10 +8,12 @@ Documentation:
     Mesh
 
 mesh elements:
-mesh mapping:
+mesh high-order mapping:
 mesh generation: Built-in
 mesh input\output:
 mesh adaptive-refinement:
+automatic mesh partitioning:
+
 
     Parallel possibilities
 

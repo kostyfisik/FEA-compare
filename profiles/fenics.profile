@@ -3,17 +3,19 @@ website: http://fenicsproject.org/
 license: GNU GPL\LGPL
 GUI: Postprocessing only 
 Community: Mailing list
-Documentation: Tutorial, 700-page book
+Documentation: Tutorial, demos (how many?), 700-page book
 Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]
-Binary: Win, Linux (Debian\Ubuntu), Mac
+Binary: Linux (Debian\Ubuntu), Mac
 
     Mesh
 
-mesh elements: intervals, triangles, tetrahedra
-mesh mapping:
-mesh generation:
-mesh input\output:
-mesh adaptive-refinement: Yes (h only?)
+mesh elements: intervals, triangles, tetrahedra, quads, hexes
+mesh high-order mapping: ?
+mesh generation: Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)
+mesh input\output: XDMF (and FEniCS XML)
+mesh adaptive-refinement: Only h
+automatic mesh partitioning: Yes
+mesh check: intersections (collision testing)
 
     Parallel possibilities
 
@@ -26,16 +28,18 @@ CUDA:
     Solver
 
 Dimension: 1/2/3D
-FE: Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart
+FE: Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any
+ order
 Predifined equations:
 Visualization: Buil-in simple plotting + External
-Output format: VTK
-Boundary elements solver:
+Output format: VTK(.pvd, .vtu) and XDMF/HDF5
+Boundary elements solver: No
 Automated assembly: Yes
+Use multiple meshes: Yes, including non-matching meshes
 
     Linear algebra
 
-Used libs:  PETSc, Trilinos/Epetra, uBLAS, and MTL4.
+Used libs:  PETSc, Trilinos/TPetra, Eigen.
 Iterative matrix solvers:
 Preconditioners:
 

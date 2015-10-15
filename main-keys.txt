@@ -8,10 +8,11 @@ Documentation:
     Mesh
 
 mesh elements:
-mesh mapping:
+mesh high-order mapping:
 mesh generation:
 mesh input\output:
 mesh adaptive-refinement:
+automatic mesh partitioning:
 
     Parallel possibilities
 
@@ -29,6 +30,7 @@ Predifined equations:
 Visualization:
 Output format:
 Boundary elements solver:
+Use multiple meshes:
 
     Linear algebra
 

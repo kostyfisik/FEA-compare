@@ -10,9 +10,11 @@ Documentation: 50+ tutorials, 50+ video lectures, Doxygen
 
 mesh elements: quad only
 mesh input\output:
-mesh mapping: [[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]
+mesh high-order mapping: [[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]
 mesh generation: external+predefined shapes
 mesh adaptive-refinement: h, p, and hp for CG and DG
+automatic mesh partitioning:
+
 
     Parallel possibilities
 
@@ -36,6 +38,7 @@ Predifined equations: Laplace?
 Visualization: External (export to *.vtk and many others)
 Output format: *.vtk
 Boundary elements solver: [[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]
+Use multiple meshes:[[http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement][Yes, autorefined from same initial mesh for each variable of a coupled problem]]
 
     Matrix-free
 
