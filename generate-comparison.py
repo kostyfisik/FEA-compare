@@ -71,4 +71,7 @@ with open('README.org', "w") as myfile:
 #print(all_profiles)
 import os
 # sudo gem install org-ruby
-os.system("org-ruby --translate html    README.org > table.html")
+
+os.system("cat style.txt > table.html")
+os.system("org-ruby --translate html    README.org >> table.html")
+os.system('echo "</body></html>" >> table.html')
