@@ -19,7 +19,7 @@
 |mesh check:|  |intersections (collision testing)|  |  |
 | *Parallel possibilities* 
 |automatic mesh partitioning:|  |Yes|  |  |
-|MPI:|Yes (up to 16k pocesses)|Yes?|Yes|  |
+|MPI:|Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]|Yes|Yes|  |
 |threads:|Threading Build Blocks|  |Yes|  |
 |OpenMP:|No|  |  |  |
 |OpenCL:|No|  |  |  |

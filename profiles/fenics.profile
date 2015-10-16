@@ -19,7 +19,7 @@ mesh check: intersections (collision testing)
     Parallel possibilities
 
 automatic mesh partitioning: Yes
-MPI: Yes?
+MPI: Yes
 threads:
 OpenMP:
 OpenCL:

@@ -18,7 +18,7 @@ automatic mesh partitioning:
 
     Parallel possibilities
 
-MPI: Yes (up to 16k pocesses)
+MPI: Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]
 threads: Threading Build Blocks
 OpenMP: No
 OpenCL: No
