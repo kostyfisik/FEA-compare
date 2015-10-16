@@ -19,7 +19,7 @@ mesh check: intersections (collision testing)
     Parallel possibilities
 
 automatic mesh partitioning: Yes
-MPI: Yes
+MPI: Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]
 threads:
 OpenMP:
 OpenCL:
