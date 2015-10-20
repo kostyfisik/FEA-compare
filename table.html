@@ -156,52 +156,52 @@ html>body tbody.scrollContent td {
 <div id="tableContainer" class="tableContainer">
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
 <thead class="fixedHeader">
-  <tr class="alternateRow"><th>Feature</th><th>Deal II</th><th>FEniCS</th><th>libMesh</th><th>COMSOL(R)</th></tr>
+  <tr class="alternateRow"><th>Feature</th><th>Deal II</th><th>FEniCS</th><th>Firedrake</th><th>libMesh</th><th>COMSOL(R)</th></tr>
 
 </thead>
 <tbody class="scrollContent">
-  <tr class="normalRow"><td>website:</td><td>www.dealii.org</td><td>http://fenicsproject.org/</td><td>http://libmesh.github.io/</td><td>https://www.comsol.com</td></tr>
-  <tr class="alternateRow"><td>license:</td><td>GPL</td><td>GNU GPL\LGPL</td><td>GPL</td><td></td></tr>
-  <tr class="normalRow"><td>GUI:</td><td>No</td><td>Postprocessing only</td><td>No</td><td>Yes</td></tr>
-  <tr class="alternateRow"><td>Community:</td><td><a href="https://groups.google.com/forum/#!forum/dealii">Google Group</a></td><td>Mailing list</td><td><a href="http://sourceforge.net/p/libmesh/mailman/">mail lists</a></td><td></td></tr>
-  <tr class="normalRow"><td>Documentation:</td><td>50+ tutorials, 50+ video lectures, Doxygen</td><td>Tutorial, demos (how many?), 700-page book</td><td>Doxygen, 40+ example codes</td><td></td></tr>
+  <tr class="normalRow"><td>website:</td><td>www.dealii.org</td><td>http://fenicsproject.org/</td><td>http://firedrakeproject.org/</td><td>http://libmesh.github.io/</td><td>https://www.comsol.com</td></tr>
+  <tr class="alternateRow"><td>license:</td><td>GPL</td><td>GNU GPL\LGPL</td><td>GNU LGPL</td><td>GPL</td><td></td></tr>
+  <tr class="normalRow"><td>GUI:</td><td>No</td><td>Postprocessing only</td><td>No</td><td>No</td><td>Yes</td></tr>
+  <tr class="alternateRow"><td>Community:</td><td><a href="https://groups.google.com/forum/#!forum/dealii">Google Group</a></td><td>Mailing list</td><td>Mailing list and IRC channel</td><td><a href="http://sourceforge.net/p/libmesh/mailman/">mail lists</a></td><td></td></tr>
+  <tr class="normalRow"><td>Documentation:</td><td>50+ tutorials, 50+ video lectures, Doxygen</td><td>Tutorial, demos (how many?), 700-page book</td><td>Manual, demos, API reference</td><td>Doxygen, 40+ example codes</td><td></td></tr>
   <tr class="normalRow"><td><b>Mesh</b></tr>
-  <tr class="alternateRow"><td>mesh elements:</td><td>quad only</td><td>intervals, triangles, tetrahedra (quads, hexes - work in progress)</td><td>Tria, Quad, Tetra, Prism, etc.</td><td></td></tr>
-  <tr class="normalRow"><td>mesh high-order mapping:</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_10.html">any order</a></td><td>(Any - work in progress)</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>mesh generation:</td><td>external+predefined shapes</td><td>Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)</td><td>Built-in</td><td>Built-in</td></tr>
-  <tr class="normalRow"><td>mesh adaptive-refinement:</td><td>h, p, and hp for CG and DG</td><td>Only h</td><td>h, p, mached hp, singular hp</td><td></td></tr>
-  <tr class="alternateRow"><td>mesh input\output:</td><td></td><td>XDMF (and FEniCS XML)</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>mesh check:</td><td></td><td>intersections (collision testing)</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>mesh elements:</td><td>quad only</td><td>intervals, triangles, tetrahedra (quads, hexes - work in progress)</td><td>intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges</td><td>Tria, Quad, Tetra, Prism, etc.</td><td></td></tr>
+  <tr class="normalRow"><td>mesh high-order mapping:</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_10.html">any order</a></td><td>(Any - work in progress)</td><td>(Any - using appropriate branches)</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>mesh generation:</td><td>external+predefined shapes</td><td>Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)</td><td>No</td><td>Built-in</td><td>Built-in</td></tr>
+  <tr class="normalRow"><td>mesh adaptive-refinement:</td><td>h, p, and hp for CG and DG</td><td>Only h</td><td></td><td>h, p, mached hp, singular hp</td><td></td></tr>
+  <tr class="alternateRow"><td>mesh input\output:</td><td></td><td>XDMF (and FEniCS XML)</td><td></td><td></td><td></td></tr>
+  <tr class="normalRow"><td>mesh check:</td><td></td><td>intersections (collision testing)</td><td></td><td></td><td></td></tr>
   <tr class="normalRow"><td><b>Parallel possibilities</b></tr>
-  <tr class="alternateRow"><td>automatic mesh partitioning:</td><td></td><td>Yes</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>MPI:</td><td>Yes (up to 16k processes), <a href="http://dealii.org/developer/doxygen/deal.II/step_40.html#Results">test data for 4k processes</a></td><td>Yes, <a href="http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537">DOLFIN solver scales up to 24k</a></td><td>Yes</td><td></td></tr>
-  <tr class="alternateRow"><td>threads:</td><td>Threading Build Blocks</td><td></td><td>Yes</td><td></td></tr>
-  <tr class="normalRow"><td>OpenMP:</td><td>No</td><td></td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>OpenCL:</td><td>No</td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>CUDA:</td><td>No</td><td></td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>automatic mesh partitioning:</td><td></td><td>Yes</td><td>Yes</td><td></td><td></td></tr>
+  <tr class="normalRow"><td>MPI:</td><td>Yes (up to 16k processes), <a href="http://dealii.org/developer/doxygen/deal.II/step_40.html#Results">test data for 4k processes</a></td><td>Yes, <a href="http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537">DOLFIN solver scales up to 24k</a></td><td>Yes, <a href="https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling">Scaling plot for Firedrake out to 24k dofs.</a></td><td>Yes</td><td></td></tr>
+  <tr class="alternateRow"><td>threads:</td><td>Threading Build Blocks</td><td></td><td></td><td>Yes</td><td></td></tr>
+  <tr class="normalRow"><td>OpenMP:</td><td>No</td><td></td><td>Limited</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>OpenCL:</td><td>No</td><td></td><td></td><td></td><td></td></tr>
+  <tr class="normalRow"><td>CUDA:</td><td>No</td><td></td><td></td><td></td><td></td></tr>
   <tr class="normalRow"><td><b>Solver</b></tr>
-  <tr class="alternateRow"><td>Dimension:</td><td>1/2/3D</td><td>1/2/3D</td><td>2D\3D</td><td></td></tr>
-  <tr class="normalRow"><td>FE:</td><td>Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.</td><td>Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any</td><td>Lagrange, Hierarchic, Discontinuous Monomials</td><td></td></tr>
-  <tr class="alternateRow"><td>Predifined equations:</td><td>Laplace?</td><td></td><td>No</td><td>Yes, via modules</td></tr>
-  <tr class="normalRow"><td>Visualization:</td><td>External (export to *.vtk and many others)</td><td>Buil-in simple plotting + External</td><td>No</td><td>Built-in</td></tr>
-  <tr class="alternateRow"><td>Output format:</td><td>*.vtk</td><td>VTK(.pvd, .vtu) and XDMF/HDF5</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>Boundary elements solver:</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_34.html">Yes</a></td><td>No</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>Use multiple meshes:</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement">Yes, autorefined from same initial mesh for each variable of a coupled problem</a></td><td>Yes, including non-matching meshes</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>Dimension:</td><td>1/2/3D</td><td>1/2/3D</td><td>1/2/3D</td><td>2D\3D</td><td></td></tr>
+  <tr class="normalRow"><td>FE:</td><td>Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.</td><td>Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any</td><td>Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the Periodic Table (femtable.org), any</td><td>Lagrange, Hierarchic, Discontinuous Monomials</td><td></td></tr>
+  <tr class="alternateRow"><td>Predifined equations:</td><td>Laplace?</td><td></td><td></td><td>No</td><td>Yes, via modules</td></tr>
+  <tr class="normalRow"><td>Visualization:</td><td>External (export to *.vtk and many others)</td><td>Buil-in simple plotting + External</td><td>External</td><td>No</td><td>Built-in</td></tr>
+  <tr class="alternateRow"><td>Output format:</td><td>*.vtk</td><td>VTK(.pvd, .vtu) and XDMF/HDF5</td><td>VTK(.pvd, .vtu)</td><td></td><td></td></tr>
+  <tr class="normalRow"><td>Boundary elements solver:</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_34.html">Yes</a></td><td>No</td><td>No</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>Use multiple meshes:</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement">Yes, autorefined from same initial mesh for each variable of a coupled problem</a></td><td>Yes, including non-matching meshes</td><td>Yes</td><td></td><td></td></tr>
   <tr class="normalRow"><td><b>Linear algebra</b></tr>
-  <tr class="alternateRow"><td>Used libs:</td><td>Built-in + Trilinos, PETSc, and METIS</td><td>PETSc, Trilinos/TPetra, Eigen.</td><td>PETSc, Trilinos, LASPack,  SLEPc</td><td></td></tr>
-  <tr class="normalRow"><td>Iterative matrix solvers:</td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
-  <tr class="alternateRow"><td>Preconditioners:</td><td>Multigrid</td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
+  <tr class="alternateRow"><td>Used libs:</td><td>Built-in + Trilinos, PETSc, and METIS</td><td>PETSc, Trilinos/TPetra, Eigen.</td><td>PETSc</td><td>PETSc, Trilinos, LASPack,  SLEPc</td><td></td></tr>
+  <tr class="normalRow"><td>Iterative matrix solvers:</td><td></td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
+  <tr class="alternateRow"><td>Preconditioners:</td><td>Multigrid</td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
   <tr class="normalRow"><td><b>Matrix-free</b></tr>
-  <tr class="alternateRow"><td>matrix-free:</td><td>Yes</td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>matrix-free save memory:</td><td>Yes</td><td></td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>matrix-free speed-up:</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix">Yes</a></td><td></td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>matrix-free:</td><td>Yes</td><td></td><td>Yes</td><td></td><td></td></tr>
+  <tr class="normalRow"><td>matrix-free save memory:</td><td>Yes</td><td></td><td></td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>matrix-free speed-up:</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix">Yes</a></td><td></td><td></td><td></td><td></td></tr>
   <tr class="normalRow"><td><b>Used language</b></tr>
-  <tr class="alternateRow"><td>Native language:</td><td>C++</td><td>C++</td><td>C++</td><td></td></tr>
-  <tr class="normalRow"><td>Bindings to language:</td><td>No</td><td>Python</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>Native language:</td><td>C++</td><td>C++</td><td>Python (and generated C)</td><td>C++</td><td></td></tr>
+  <tr class="normalRow"><td>Bindings to language:</td><td>No</td><td>Python</td><td></td><td></td><td></td></tr>
   <tr class="normalRow"><td><b>Other</b></tr>
-  <tr class="alternateRow"><td>Wilkinson Prize:</td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2007</a></td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2015 for dolfin-adjoint</a></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>Binary:</td><td></td><td>Linux (Debian\Ubuntu), Mac</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>Automated assembly:</td><td></td><td>Yes</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>mesh operation:</td><td></td><td></td><td>distort/translate/rotate/scale</td><td></td></tr>
+  <tr class="alternateRow"><td>Wilkinson Prize:</td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2007</a></td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2015 for dolfin-adjoint</a></td><td></td><td></td><td></td></tr>
+  <tr class="normalRow"><td>Binary:</td><td></td><td>Linux (Debian\Ubuntu), Mac</td><td>No. Automated installers for Linux and Mac</td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>Automated assembly:</td><td></td><td>Yes</td><td>Yes</td><td></td><td></td></tr>
+  <tr class="normalRow"><td>mesh operation:</td><td></td><td></td><td></td><td>distort/translate/rotate/scale</td><td></td></tr>
 </table>
 </body></html>

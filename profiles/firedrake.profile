@@ -21,7 +21,7 @@ mesh check:
 automatic mesh partitioning: Yes
 MPI: Yes, [[https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling][Scaling plot for Firedrake out to 24k dofs.]]
 threads:
-OpenMP:
+OpenMP: Limited
 OpenCL:
 CUDA:
 
