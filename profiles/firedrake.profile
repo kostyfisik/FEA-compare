@@ -11,7 +11,7 @@ Binary: No. Automated installers for Linux and Mac
 
 mesh elements: intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges
 mesh high-order mapping: (Any - using appropriate branches)
-mesh generation: No
+mesh generation: External + predefined shapes. Internal mesh extrusion operation.
 mesh input\output: 
 mesh adaptive-refinement: 
 mesh check: 

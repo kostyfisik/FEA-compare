@@ -13,7 +13,7 @@
 | *Mesh* 
 |mesh elements:|quad only|intervals, triangles, tetrahedra (quads, hexes - work in progress)|intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges|Tria, Quad, Tetra, Prism, etc.|  |
 |mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|(Any - work in progress)|(Any - using appropriate branches)|  |  |
-|mesh generation:|external+predefined shapes|Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)|No|Built-in|Built-in|
+|mesh generation:|external+predefined shapes|Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)|External + predefined shapes. Internal mesh extrusion operation.|Built-in|Built-in|
 |mesh adaptive-refinement:|h, p, and hp for CG and DG|Only h|  |h, p, mached hp, singular hp|  |
 |mesh input\output:|  |XDMF (and FEniCS XML)|  |  |  |
 |mesh check:|  |intersections (collision testing)|  |  |  |
