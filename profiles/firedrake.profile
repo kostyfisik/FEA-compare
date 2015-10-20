@@ -1,4 +1,4 @@
-name:  FEniCS
+name:  Firedrake
 website: http://firedrakeproject.org/
 license: GNU LGPL
 GUI: No
@@ -19,7 +19,7 @@ mesh check:
     Parallel possibilities
 
 automatic mesh partitioning: Yes
-MPI: Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]
+MPI: Yes, [[https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling][Scaling plot for Firedrake out to 24k dofs.]]
 threads:
 OpenMP:
 OpenCL:
