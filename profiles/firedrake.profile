@@ -28,7 +28,7 @@ CUDA:
     Solver
 
 Dimension: 1/2/3D
-FE: Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the Periodic Table (femtable.org), any
+FE: Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the [[http://femtable.org][Periodic Table]], any
  order
 Predifined equations:
 Visualization: External

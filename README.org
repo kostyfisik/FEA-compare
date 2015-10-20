@@ -26,7 +26,7 @@
 |CUDA:|No|  |  |  |  |
 | *Solver* 
 |Dimension:|1/2/3D|1/2/3D|1/2/3D|2D\3D|  |
-|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any|Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the Periodic Table (femtable.org), any|Lagrange, Hierarchic, Discontinuous Monomials|  |
+|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any|Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the [[http://femtable.org][Periodic Table]], any|Lagrange, Hierarchic, Discontinuous Monomials|  |
 |Predifined equations:|Laplace?|  |  |No|Yes, via modules|
 |Visualization:|External (export to *.vtk and many others)|Buil-in simple plotting + External|External|No|Built-in|
 |Output format:|*.vtk|VTK(.pvd, .vtu) and XDMF/HDF5|VTK(.pvd, .vtu)|  |  |
