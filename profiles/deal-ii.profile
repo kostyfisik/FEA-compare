@@ -9,10 +9,11 @@ Documentation: 50+ tutorials, 50+ video lectures, Doxygen
     Mesh
 
 mesh elements: quad only
-mesh input\output: IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])
+mesh input\output:
 mesh high-order mapping: [[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]
 mesh generation: external+predefined shapes
 mesh adaptive-refinement: h, p, and hp for CG and DG
+CAD files support: IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])
 automatic mesh partitioning: yes
 
 

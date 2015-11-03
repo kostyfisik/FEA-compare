@@ -13,6 +13,7 @@ mesh generation: Built-in
 mesh input\output:
 mesh adaptive-refinement:
 automatic mesh partitioning:
+CAD support: STEP, IGES and [[https://www.comsol.com/cad-import-module][many others]].
 
 
     Parallel possibilities

@@ -171,8 +171,9 @@ html>body tbody.scrollContent td {
   <tr class="normalRow"><td>mesh high-order mapping:</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_10.html">any order</a></td><td>(Any - work in progress)</td><td>(Any - using appropriate branches)</td><td></td><td></td></tr>
   <tr class="alternateRow"><td>mesh generation:</td><td>external+predefined shapes</td><td>Yes, <a href="http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html">Constructive Solid Geometry (CSG)</a> supported via mshr (CGAL and Tetgen used as backends)</td><td>External + predefined shapes. Internal mesh extrusion operation.</td><td>Built-in</td><td>Built-in</td></tr>
   <tr class="normalRow"><td>mesh adaptive-refinement:</td><td>h, p, and hp for CG and DG</td><td>Only h</td><td></td><td>h, p, mached hp, singular hp</td><td></td></tr>
-  <tr class="alternateRow"><td>mesh input\output:</td><td>IGES, STEP (with <a href="https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html">OpenCascade wrapper</a>)</td><td>XDMF (and FEniCS XML)</td><td></td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>mesh input\output:</td><td></td><td>XDMF (and FEniCS XML)</td><td></td><td></td><td></td></tr>
   <tr class="normalRow"><td>mesh check:</td><td></td><td>intersections (collision testing)</td><td></td><td></td><td></td></tr>
+  <tr class="alternateRow"><td>CAD files support:</td><td>IGES, STEP (with <a href="https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html">OpenCascade wrapper</a>)</td><td></td><td></td><td></td><td></td></tr>
   <tr class="normalRow"><td><b>Parallel possibilities</b></tr>
   <tr class="alternateRow"><td>automatic mesh partitioning:</td><td>yes</td><td>Yes (ParMETIS and SCOTCH)</td><td>Yes</td><td></td><td></td></tr>
   <tr class="normalRow"><td>MPI:</td><td>Yes (up to 16k processes), <a href="http://dealii.org/developer/doxygen/deal.II/step_40.html#Results">test data for 4k processes</a></td><td>Yes, <a href="http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537">DOLFIN solver scales up to 24k</a></td><td>Yes, <a href="https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling">Scaling plot for Firedrake out to 24k cores.</a></td><td>Yes</td><td></td></tr>
@@ -204,5 +205,6 @@ html>body tbody.scrollContent td {
   <tr class="normalRow"><td>Binary:</td><td></td><td>Linux (Debian\Ubuntu), Mac</td><td>No. Automated installers for Linux and Mac</td><td></td><td></td></tr>
   <tr class="alternateRow"><td>Automated assembly:</td><td></td><td>Yes</td><td>Yes</td><td></td><td></td></tr>
   <tr class="normalRow"><td>mesh operation:</td><td></td><td></td><td></td><td>distort/translate/rotate/scale</td><td></td></tr>
+  <tr class="alternateRow"><td>CAD support:</td><td></td><td></td><td></td><td></td><td>STEP, IGES and <a href="https://www.comsol.com/cad-import-module">many others</a>.</td></tr>
 </table>
 </body></html>

@@ -13,6 +13,7 @@ mesh generation:
 mesh adaptive-refinement:
 mesh input\output:
 mesh check:
+CAD files support:
 
     Parallel possibilities
 

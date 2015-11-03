@@ -16,8 +16,9 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|(Any - work in progress)|(Any - using appropriate branches)|  |  |
 |mesh generation:|external+predefined shapes|Yes, [[http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html][Constructive Solid Geometry (CSG)]] supported via mshr (CGAL and Tetgen used as backends)|External + predefined shapes. Internal mesh extrusion operation.|Built-in|Built-in|
 |mesh adaptive-refinement:|h, p, and hp for CG and DG|Only h|  |h, p, mached hp, singular hp|  |
-|mesh input\output:|IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])|XDMF (and FEniCS XML)|  |  |  |
+|mesh input\output:|  |XDMF (and FEniCS XML)|  |  |  |
 |mesh check:|  |intersections (collision testing)|  |  |  |
+|CAD files support:|IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])|  |  |  |  |
 | *Parallel possibilities* 
 |automatic mesh partitioning:|yes|Yes (ParMETIS and SCOTCH)|Yes|  |  |
 |MPI:|Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]|Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]|Yes, [[https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling][Scaling plot for Firedrake out to 24k cores.]]|Yes|  |
@@ -49,3 +50,4 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Binary:|  |Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
 |Automated assembly:|  |Yes|Yes|  |  |
 |mesh operation:|  |  |  |distort/translate/rotate/scale|  |
+|CAD support:|  |  |  |  |STEP, IGES and [[https://www.comsol.com/cad-import-module][many others]].|
