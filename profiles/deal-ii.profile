@@ -1,6 +1,6 @@
 name: Deal II
 website: www.dealii.org
-license: GPL
+license: LGPL
 GUI: No
 Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]
 Community: [[https://groups.google.com/forum/#!forum/dealii][Google Group]]
@@ -9,11 +9,11 @@ Documentation: 50+ tutorials, 50+ video lectures, Doxygen
     Mesh
 
 mesh elements: quad only
-mesh input\output:
+mesh input\output: IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])
 mesh high-order mapping: [[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]
 mesh generation: external+predefined shapes
 mesh adaptive-refinement: h, p, and hp for CG and DG
-automatic mesh partitioning:
+automatic mesh partitioning: yes
 
 
     Parallel possibilities
@@ -33,10 +33,10 @@ Preconditioners: Multigrid
     Solver
 
 Dimension: 1/2/3D
-FE: Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; elements composed of other elements.
+FE: Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.
 Predifined equations: Laplace?
 Visualization: External (export to *.vtk and many others)
-Output format: *.vtk
+Output format: *.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5 
 Boundary elements solver: [[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]
 Use multiple meshes:[[http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement][Yes, autorefined from same initial mesh for each variable of a coupled problem]]
 

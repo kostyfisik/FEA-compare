@@ -11,14 +11,14 @@ Binary: Linux (Debian\Ubuntu), Mac
 
 mesh elements: intervals, triangles, tetrahedra (quads, hexes - work in progress)
 mesh high-order mapping: (Any - work in progress)
-mesh generation: Yes, Constructive Solid Geometry (CSG) supported via mshr (CGAL and Tetgen used as backends)
+mesh generation: Yes, [[http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html][Constructive Solid Geometry (CSG)]] supported via mshr (CGAL and Tetgen used as backends) 
 mesh input\output: XDMF (and FEniCS XML)
 mesh adaptive-refinement: Only h
 mesh check: intersections (collision testing)
 
     Parallel possibilities
 
-automatic mesh partitioning: Yes
+automatic mesh partitioning: Yes (ParMETIS and SCOTCH)
 MPI: Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]
 threads:
 OpenMP:
