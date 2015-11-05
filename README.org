@@ -12,7 +12,7 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]|Mailing list|Mailing list and IRC channel|[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|  |
 |Documentation:|50+ tutorials, 50+ video lectures, Doxygen|Tutorial, demos (how many?), 700-page book|Manual, demos, API reference|Doxygen, 40+ example codes|  |
 | *Mesh* 
-|mesh elements:|quad only|intervals, triangles, tetrahedra (quads, hexes - work in progress)|intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges|Tria, Quad, Tetra, Prism, etc.|  |
+|mesh elements:|intervals (1d), quads (2d), and hexes (3d) only|intervals, triangles, tetrahedra (quads, hexes - work in progress)|intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges|Tria, Quad, Tetra, Prism, etc.|  |
 |mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|(Any - work in progress)|(Any - using appropriate branches)|  |  |
 |mesh generation:|external+predefined shapes|Yes, [[http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html][Constructive Solid Geometry (CSG)]] supported via mshr (CGAL and Tetgen used as backends)|External + predefined shapes. Internal mesh extrusion operation.|Built-in|Built-in|
 |mesh adaptive-refinement:|h, p, and hp for CG and DG|Only h|  |h, p, mached hp, singular hp|  |
@@ -20,10 +20,10 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |mesh check:|  |intersections (collision testing)|  |  |  |
 |CAD files support:|IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])|  |  |  |STEP, IGES and [[https://www.comsol.com/cad-import-module][many others]].|
 | *Parallel possibilities* 
-|automatic mesh partitioning:|yes|Yes (ParMETIS and SCOTCH)|Yes|  |  |
+|automatic mesh partitioning:|yes, shared (METIS/Parmetis) and distributed (p4est)|Yes (ParMETIS and SCOTCH)|Yes|  |  |
 |MPI:|Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]|Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]|Yes, [[https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling][Scaling plot for Firedrake out to 24k cores.]]|Yes|  |
 |threads:|Threading Build Blocks|  |  |Yes|  |
-|OpenMP:|No|  |Limited|  |  |
+|OpenMP:|Yes (vectorization only)|  |Limited|  |  |
 |OpenCL:|No|  |  |  |  |
 |CUDA:|No|  |  |  |  |
 | *Solver* 
@@ -35,9 +35,9 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]|No|No|  |  |
 |Use multiple meshes:|[[http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement][Yes, autorefined from same initial mesh for each variable of a coupled problem]]|Yes, including non-matching meshes|Yes|  |  |
 | *Linear algebra* 
-|Used libs:|Built-in + Trilinos, PETSc, and METIS|PETSc, Trilinos/TPetra, Eigen.|PETSc|PETSc, Trilinos, LASPack,  SLEPc|  |
-|Iterative matrix solvers:|  |  |  |LASPack serial, PETSc parallel|  |
-|Preconditioners:|Multigrid|  |  |LASPack serial, PETSc parallel|  |
+|Used libs:|Built-in + Trilinos, PETSc, and SLEPc|PETSc, Trilinos/TPetra, Eigen.|PETSc|PETSc, Trilinos, LASPack,  SLEPc|  |
+|Iterative matrix solvers:|All Krylov (CG, Minres, GMRES, BiCGStab, QMRS)|  |  |LASPack serial, PETSc parallel|  |
+|Preconditioners:|Many, including algebraic multigrid (via Hypre and ML) and geometric multigrid|  |  |LASPack serial, PETSc parallel|  |
 | *Matrix-free* 
 |matrix-free:|Yes|  |Yes|  |  |
 |matrix-free save memory:|Yes|  |  |  |  |
@@ -47,6 +47,6 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Bindings to language:|No|Python|  |  |  |
 | *Other* 
 |Wilkinson Prize:|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|  |  |  |
-|Binary:|  |Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
+|Binary:|Windows (work in progress), Mac|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
 |Automated assembly:|  |Yes|Yes|  |  |
 |mesh operation:|  |  |  |distort/translate/rotate/scale|  |

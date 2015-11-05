@@ -5,31 +5,32 @@ GUI: No
 Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]
 Community: [[https://groups.google.com/forum/#!forum/dealii][Google Group]]
 Documentation: 50+ tutorials, 50+ video lectures, Doxygen
+Binary: Windows (work in progress), Mac
 
     Mesh
 
-mesh elements: quad only
+mesh elements: intervals (1d), quads (2d), and hexes (3d) only
 mesh input\output:
 mesh high-order mapping: [[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]
 mesh generation: external+predefined shapes
 mesh adaptive-refinement: h, p, and hp for CG and DG
 CAD files support: IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])
-automatic mesh partitioning: yes
 
 
     Parallel possibilities
 
+automatic mesh partitioning: yes, shared (METIS/Parmetis) and distributed (p4est)
 MPI: Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]
 threads: Threading Build Blocks
-OpenMP: No
+OpenMP: Yes (vectorization only)
 OpenCL: No
 CUDA: No
 
     Linear algebra
 
-Used libs: Built-in + Trilinos, PETSc, and METIS
-Iterative matrix solvers:
-Preconditioners: Multigrid
+Used libs: Built-in + Trilinos, PETSc, and SLEPc
+Iterative matrix solvers: All Krylov (CG, Minres, GMRES, BiCGStab, QMRS)
+Preconditioners: Many, including algebraic multigrid (via Hypre and ML) and geometric multigrid
 
     Solver
 
