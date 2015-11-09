@@ -4,49 +4,52 @@
  Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).
 Use generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). 
 
-|Feature|Deal II|FEniCS|Firedrake|libMesh|COMSOL(R)|
-|--+--+--+--+--+--|
-|website:|www.dealii.org|http://fenicsproject.org/|http://firedrakeproject.org/|http://libmesh.github.io/|https://www.comsol.com|
-|license:|LGPL|GNU GPL\LGPL|GNU LGPL|GPL|  |
-|GUI:|No|Postprocessing only|No|No|Yes|
-|Community:|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]|Mailing list|Mailing list and IRC channel|[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|  |
-|Documentation:|50+ tutorials, 50+ video lectures, Doxygen|Tutorial, demos (how many?), 700-page book|Manual, demos, API reference|Doxygen, 40+ example codes|  |
+|Feature|GetFEM++|Deal II|FEniCS|Firedrake|libMesh|COMSOL(R)|
+|--+--+--+--+--+--+--|
+|website:|http://home.gna.org/getfem/|www.dealii.org|http://fenicsproject.org/|http://firedrakeproject.org/|http://libmesh.github.io/|https://www.comsol.com|
+|license:|LGPL|LGPL|GNU GPL\LGPL|GNU LGPL|GPL|  |
+|GUI:|No|No|Postprocessing only|No|No|Yes|
+|Community:|Mailing list|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]|Mailing list|Mailing list and IRC channel|[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|  |
+|Documentation:|User doc, tutorials, demos, developper's guide|50+ tutorials, 50+ video lectures, Doxygen|Tutorial, demos (how many?), 700-page book|Manual, demos, API reference|Doxygen, 40+ example codes|  |
 | *Mesh* 
-|mesh elements:|intervals (1d), quads (2d), and hexes (3d) only|intervals, triangles, tetrahedra (quads, hexes - work in progress)|intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges|Tria, Quad, Tetra, Prism, etc.|  |
-|mesh high-order mapping:|[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|(Any - work in progress)|(Any - using appropriate branches)|  |  |
-|mesh generation:|external+predefined shapes|Yes, [[http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html][Constructive Solid Geometry (CSG)]] supported via mshr (CGAL and Tetgen used as backends)|External + predefined shapes. Internal mesh extrusion operation.|Built-in|Built-in|
-|mesh adaptive-refinement:|h, p, and hp for CG and DG|Only h|  |h, p, mached hp, singular hp|  |
-|mesh input\output:|  |XDMF (and FEniCS XML)|  |  |  |
-|mesh check:|  |intersections (collision testing)|  |  |  |
-|CAD files support:|IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])|  |  |  |STEP, IGES and [[https://www.comsol.com/cad-import-module][many others]].|
+|mesh elements:|intervals, triangles, tetrahedra, quads, hexes, prisms, some 4D elements, easily extensible.|intervals (1d), quads (2d), and hexes (3d) only|intervals, triangles, tetrahedra (quads, hexes - work in progress)|intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges|Tria, Quad, Tetra, Prism, etc.|  |
+|mesh high-order mapping:|  |[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|(Any - work in progress)|(Any - using appropriate branches)|  |  |
+|mesh generation:|Experimental in any dimension + predefined shapes + Extrusion.|external+predefined shapes|Yes, [[http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html][Constructive Solid Geometry (CSG)]] supported via mshr (CGAL and Tetgen used as backends)|External + predefined shapes. Internal mesh extrusion operation.|Built-in|Built-in|
+|mesh adaptive-refinement:|Only h|h, p, and hp for CG and DG|Only h|  |h, p, mached hp, singular hp|  |
+|mesh input\output:|gmsh, GiD, Ansys|  |XDMF (and FEniCS XML)|  |  |  |
+|mesh check:|?|  |intersections (collision testing)|  |  |  |
+|CAD files support:|No|IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html][OpenCascade wrapper]])|  |  |  |STEP, IGES and [[https://www.comsol.com/cad-import-module][many others]].|
+|mesh operation:|Extrude, rotate, translation, refine|  |  |  |distort/translate/rotate/scale|  |
 | *Parallel possibilities* 
-|automatic mesh partitioning:|yes, shared (METIS/Parmetis) and distributed (p4est)|Yes (ParMETIS and SCOTCH)|Yes|  |  |
-|MPI:|Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]|Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]|Yes, [[https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling][Scaling plot for Firedrake out to 24k cores.]]|Yes|  |
-|threads:|Threading Build Blocks|  |  |Yes|  |
-|OpenMP:|Yes (vectorization only)|  |Limited|  |  |
-|OpenCL:|No|  |  |  |  |
-|CUDA:|No|  |  |  |  |
+|automatic mesh partitioning:|Yes (METIS)|yes, shared (METIS/Parmetis) and distributed (p4est)|Yes (ParMETIS and SCOTCH)|Yes|  |  |
+|MPI:|Yes|Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test data for 4k processes]]|Yes, [[http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537][DOLFIN solver scales up to 24k]]|Yes, [[https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling][Scaling plot for Firedrake out to 24k cores.]]|Yes|  |
+|threads:|  |Threading Build Blocks|  |  |Yes|  |
+|OpenMP:|Yes|Yes (vectorization only)|  |Limited|  |  |
+|OpenCL:|No|No|  |  |  |  |
+|CUDA:|No|No|  |  |  |  |
 | *Solver* 
-|Dimension:|1/2/3D|1/2/3D|1/2/3D|2D\3D|  |
-|FE:|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any|Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the [[http://femtable.org][Periodic Table]], any|Lagrange, Hierarchic, Discontinuous Monomials|  |
-|Predifined equations:|Laplace?|  |  |No|Yes, via modules|
-|Visualization:|External (export to *.vtk and many others)|Buil-in simple plotting + External|External|No|Built-in|
-|Output format:|*.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5|VTK(.pvd, .vtu) and XDMF/HDF5|VTK(.pvd, .vtu)|  |  |
-|Boundary elements solver:|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]|No|No|  |  |
-|Use multiple meshes:|[[http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement][Yes, autorefined from same initial mesh for each variable of a coupled problem]]|Yes, including non-matching meshes|Yes|  |  |
+|Dimension:|Any, possibility to mix and couple problem of different dimension|1/2/3D|1/2/3D|1/2/3D|2D\3D|  |
+|FE:|Continuous and discontinuous Lagrange, Hermite, Argyris, Morley, Nedelec, Raviart-Thomas, composite elements (HCT, FVS), Hierarchical elements, Xfem, easily extensible.|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any|Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the [[http://femtable.org][Periodic Table]], any|Lagrange, Hierarchic, Discontinuous Monomials|  |
+|Predifined equations:|Model bricks: Laplace, linear and nonlinear elasticity, Helmholtz, plasticity, Mindlin and K.L. plates, boundary conditions including contact with friction.|Laplace?|  |  |No|Yes, via modules|
+|Automated assembly:|Yes|  |Yes|Yes|  |  |
+|Visualization:|External or with the Scilab/Matlab/Python interface. Possibility to perform complex slices.|External (export to *.vtk and many others)|Buil-in simple plotting + External|External|No|Built-in|
+|Output format:|vtk, gmsh, OpenDX.|*.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5|VTK(.pvd, .vtu) and XDMF/HDF5|VTK(.pvd, .vtu)|  |  |
+|Boundary elements solver:|No|[[https://www.dealii.org/developer/doxygen/deal.II/step_34.html][Yes]]|No|No|  |  |
+|Use multiple meshes:|Yes including different dimensions and taking account of any transformation.|[[http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement][Yes, autorefined from same initial mesh for each variable of a coupled problem]]|Yes, including non-matching meshes|Yes|  |  |
 | *Linear algebra* 
-|Used libs:|Built-in + Trilinos, PETSc, and SLEPc|PETSc, Trilinos/TPetra, Eigen.|PETSc|PETSc, Trilinos, LASPack,  SLEPc|  |
-|Iterative matrix solvers:|All Krylov (CG, Minres, GMRES, BiCGStab, QMRS)|  |  |LASPack serial, PETSc parallel|  |
-|Preconditioners:|Many, including algebraic multigrid (via Hypre and ML) and geometric multigrid|  |  |LASPack serial, PETSc parallel|  |
+|Used libs:|SuperLU, MUMPS, Built-in.|Built-in + Trilinos, PETSc, and SLEPc|PETSc, Trilinos/TPetra, Eigen.|PETSc|PETSc, Trilinos, LASPack,  SLEPc|  |
+|Iterative matrix solvers:|All Krylov|All Krylov (CG, Minres, GMRES, BiCGStab, QMRS)|  |  |LASPack serial, PETSc parallel|  |
+|Preconditioners:|Basic ones (ILU, ILUT)|Many, including algebraic multigrid (via Hypre and ML) and geometric multigrid|  |  |LASPack serial, PETSc parallel|  |
 | *Matrix-free* 
-|matrix-free:|Yes|  |Yes|  |  |
-|matrix-free save memory:|Yes|  |  |  |  |
-|matrix-free speed-up:|[[https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix][Yes]]|  |  |  |  |
+|matrix-free:|No|Yes|  |Yes|  |  |
+|matrix-free save memory:|No|Yes|  |  |  |  |
+|matrix-free speed-up:|No|[[https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix][Yes]]|  |  |  |  |
 | *Used language* 
-|Native language:|C++|C++|Python (and generated C)|C++|  |
-|Bindings to language:|No|Python|  |  |  |
+|Native language:|C++|C++|C++|Python (and generated C)|C++|  |
+|Bindings to language:|Python, Scilab or Matlab|No|Python|  |  |  |
 | *Other* 
-|Wilkinson Prize:|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|  |  |  |
-|Binary:|Windows (work in progress), Mac|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
-|Automated assembly:|  |Yes|Yes|  |  |
-|mesh operation:|  |  |  |distort/translate/rotate/scale|  |
+|Symbolic derivation of the tangent system for nonlinear problems:|Yes.|  |  |  |  |  |
+|Coupled nonlinear problems:|Yes|  |  |  |  |  |
+|Support for fictitious domain methods:|Yes|  |  |  |  |  |
+|Binary:|Linux (Debian/Ubuntu)|Windows (work in progress), Mac|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
+|Wilkinson Prize:|  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|  |  |  |
