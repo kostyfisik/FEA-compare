@@ -71,17 +71,26 @@ for key in all_keys[1:]:
         else:
             all_table += "|  "
     all_table += "|\n"
-disclaimer = "\n This is an auto generated comparison from manually filled *.profiles for FEA software. It is also available in [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][HTML format]]. Profiles in table are sorted with the number of filled keys.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).\nUse generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). \n"
+disclaimer = "\n** Overview\nThis is an auto generated comparison from manually filled *.profiles for FEA software. It is also available in [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][HTML format]]. Profiles in table are sorted with the number of filled keys.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).\nUse generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). \n"
 with open('README.org', "w") as myfile:
-    myfile.write(all_table+disclaimer)
+    myfile.write(disclaimer+all_table)
 
 #print(all_profiles)
 import os
 
 os.system("cat style.txt > table.tmp")
 
+with open('tmp.org', "w") as myfile:
+    myfile.write(all_table)
+                        
 # sudo gem install org-ruby
-os.system("org-ruby --translate html    README.org >> table.tmp")
+os.system("org-ruby --translate html    tmp.org >> table.tmp")
+
+with open('tmp.org', "w") as myfile:
+    myfile.write(disclaimer)
+
+# sudo gem install org-ruby
+os.system("org-ruby --translate html    tmp.org >> table.tmp")
 
 os.system('echo "</body></html>" >> table.tmp')
 
@@ -93,8 +102,8 @@ with open('table.html', 'w') as new_f:
                 line = '        <div class="outerbox">\n            <div class="innerbox">\n                <table class="bluetable" id="myDemoTable" cellpadding="0" cellspacing="0">\n         <thead>\n'
             if '<th>' in line:
                 line += '\n</thead>\n<tbody>\n'
-            new_f.write(line)
             if '</table>' in line:
-                line = "</tbody>\n</table>\n</div>\n"
+                line = "</tbody>\n</table>\n</div></div>\n"
+            new_f.write(line)
 
-os.system('rm -f table.tmp')
+# os.system('rm -f table.tmp')
