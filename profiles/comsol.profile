@@ -1,5 +1,5 @@
 name: COMSOL(R)
-website: https://www.comsol.com
+website: [[https://www.comsol.com][https://www.comsol.com]]
 license:
 GUI: Yes
 Community:

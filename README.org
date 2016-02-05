@@ -7,7 +7,7 @@ This is an auto generated comparison from manually filled `*.profiles` for FEA s
 Use generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). 
 |Feature|GetFEM++|Deal II|FEniCS|Firedrake|libMesh|COMSOL(R)|
 |--+--+--+--+--+--+--|
-|website:|http://home.gna.org/getfem/|www.dealii.org|http://fenicsproject.org/|http://firedrakeproject.org/|http://libmesh.github.io/|https://www.comsol.com|
+|website:|[[http://home.gna.org/getfem/][http://home.gna.org/getfem/]]|[[www.dealii.org][www.dealii.org]]|[[http://fenicsproject.org/][http://fenicsproject.org/]]|[[http://firedrakeproject.org/][http://firedrakeproject.org/]]|[[http://libmesh.github.io/][http://libmesh.github.io/]]|[[https://www.comsol.com][https://www.comsol.com]]|
 |license:|LGPL|LGPL|GNU GPL\LGPL|GNU LGPL|GPL|  |
 |GUI:|No|No|Postprocessing only|No|No|Yes|
 |Community:|Mailing list|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]|Mailing list|Mailing list and IRC channel|[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|  |
@@ -52,5 +52,5 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Symbolic derivation of the tangent system for nonlinear problems:|Yes.|  |  |  |  |  |
 |Coupled nonlinear problems:|Yes|  |  |  |  |  |
 |Support for fictitious domain methods:|Yes|  |  |  |  |  |
-|Binary:|Linux (Debian/Ubuntu)|Windows (work in progress), Mac|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
+|Binary:|Linux (Debian/Ubuntu)|Linux, Windows (work in progress), Mac|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
 |Wilkinson Prize:|  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|  |  |  |
