@@ -1,5 +1,5 @@
 name:  FEniCS
-website: http://fenicsproject.org/
+website: [[http://fenicsproject.org/][http://fenicsproject.org/]]
 license: GNU GPL\LGPL
 GUI: Postprocessing only 
 Community: Mailing list

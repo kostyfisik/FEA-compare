@@ -1,5 +1,5 @@
 name:  Firedrake
-website: http://firedrakeproject.org/
+website: [[http://firedrakeproject.org/][http://firedrakeproject.org/]]
 license: GNU LGPL
 GUI: No
 Community: Mailing list and IRC channel

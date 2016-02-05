@@ -1,11 +1,11 @@
 name: Deal II
-website: www.dealii.org
+website: [[www.dealii.org][www.dealii.org]]
 license: LGPL
 GUI: No
 Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]
 Community: [[https://groups.google.com/forum/#!forum/dealii][Google Group]]
 Documentation: 50+ tutorials, 50+ video lectures, Doxygen
-Binary: Windows (work in progress), Mac
+Binary: Linux, Windows (work in progress), Mac
 
     Mesh
 

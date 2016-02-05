@@ -1,5 +1,5 @@
 name: GetFEM++
-website: http://home.gna.org/getfem/
+website: [[http://home.gna.org/getfem/][http://home.gna.org/getfem/]]
 license: LGPL
 GUI: No
 Community: Mailing list

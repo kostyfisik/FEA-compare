@@ -1,5 +1,5 @@
 name: libMesh
-website: http://libmesh.github.io/
+website: [[http://libmesh.github.io/][http://libmesh.github.io/]]
 license: GPL
 GUI: No
 Community:  [[http://sourceforge.net/p/libmesh/mailman/][mail lists]]
