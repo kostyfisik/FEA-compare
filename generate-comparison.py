@@ -71,34 +71,28 @@ for key in all_keys[1:]:
         else:
             all_table += "|  "
     all_table += "|\n"
-disclaimer = " This is an auto generated comparison from manually filled *.profiles for FEA software. It is also available in [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][HTML format]]. Profiles in table are sorted with the number of filled keys.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).\nUse generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). \n\n"
+disclaimer = "\n This is an auto generated comparison from manually filled *.profiles for FEA software. It is also available in [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][HTML format]]. Profiles in table are sorted with the number of filled keys.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).\nUse generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). \n"
 with open('README.org', "w") as myfile:
-    myfile.write(disclaimer+all_table)
+    myfile.write(all_table+disclaimer)
 
 #print(all_profiles)
 import os
-# sudo gem install org-ruby
 
 os.system("cat style.txt > table.tmp")
+
+# sudo gem install org-ruby
 os.system("org-ruby --translate html    README.org >> table.tmp")
+
 os.system('echo "</body></html>" >> table.tmp')
 
 count = 1
 with open('table.html', 'w') as new_f:
     with open("table.tmp") as f:
         for line in f:            
-            if '<b>' in line:
-                count = 0
-            if '<tr>' in line:
-                count += 1
-                if count % 2 == 0:
-                    line = line.replace('<tr>','<tr class="alternateRow">')
-                else:
-                    line = line.replace('<tr>','<tr class="normalRow">')
             if '<table>' in line:
-                line = '<div id="tableContainer" class="tableContainer">\n<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">\n<thead class="fixedHeader">\n'
+                line = '        <div class="outerbox">\n            <div class="innerbox">\n                <table class="bluetable" id="myDemoTable" cellpadding="0" cellspacing="0">\n         <thead>\n'
             if '<th>' in line:
-                line += '\n</thead>\n<tbody class="scrollContent">\n'
+                line += '\n</thead>\n<tbody>\n'
             new_f.write(line)
             if '</table>' in line:
                 line = "</tbody>\n</table>\n</div>\n"

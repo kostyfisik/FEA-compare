@@ -1,212 +1,95 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- http://bytesare.us/cms/index.php/demo-apps/html-table-with-fixed-header-and-first-column -->
 <html>
-  <head>
-    <!-- Scroll table from http://www.imaputz.com/cssStuff/bigFourVersion.html -->
-    <title>FEA comparison</title>
-<style type="text/css">
-<!--
-/* Terence Ordona, portal[AT]imaputz[DOT]com         */
-/* http://creativecommons.org/licenses/by-sa/2.0/    */
+    <head>
+        <title>FixedHeaderTable Test</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        
+        <link href="css/fixedheadertable.css" rel="stylesheet" media="screen" />
+        <link href="css/custom.css" rel="stylesheet" media="screen" />
+        
+<!--    <script src="js/jquery-1.7.2.js"></script>   -->
+        <script src="js/jquery-1.7.2.min.js"></script>    
+        <script src="js/jquery.fixedheadertable.js"></script>
+        
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            $(document).ready(function() {
+                $('#myDemoTable').fixedHeaderTable({
+                    altClass : 'odd',
+                    footer : true,
+                    fixedColumns : 1
+                });
+            });
+            /* ]]> */
+        </script>
+        
+        <style type="text/css">
+        </style>
+        
+    </head>
+    <body>
 
-/* begin some basic styling here                     */
-body {
-	background: #FFF;
-	color: #000;
-	font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;
-	margin: 10px;
-	padding: 0
-}
+        <div class="outerbox">
+            <div class="innerbox">
+                <table class="bluetable" id="myDemoTable" cellpadding="0" cellspacing="0">
+         <thead>
+  <tr><th>Feature</th><th>GetFEM++</th><th>Deal II</th><th>FEniCS</th><th>Firedrake</th><th>libMesh</th><th>COMSOL(R)</th></tr>
 
-table, td {
-	color: #000;
-	font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif
-}
-
-h1 {
-	font: normal normal 18px Verdana, Geneva, Arial, Helvetica, sans-serif;
-	margin: 0 0 5px 0
-}
-
-h2 {
-	font: normal normal 16px Verdana, Geneva, Arial, Helvetica, sans-serif;
-	margin: 0 0 5px 0
-}
-
-h3 {
-	font: normal normal 13px Verdana, Geneva, Arial, Helvetica, sans-serif;
-	color: #008000;
-	margin: 0 0 15px 0
-}
-/* end basic styling                                 */
-
-/* define height and width of scrollable area. Add 16px to width for scrollbar          */
-div.tableContainer {
-	clear: both;
-	border: 1px solid #963;
-	/*height: 285px;*/
-	height: 80vh;
-	overflow: auto;
-	/*width: 756px*/
-	width: 90vw
-}
-
-/* Reset overflow value to hidden for all non-IE browsers. */
-html>body div.tableContainer {
-	overflow: hidden;
-	/*width: 756px*/
-	width: 90vw
-}
-
-/* define width of table. IE browsers only                 */
-div.tableContainer table {
-	float: left;
-	width: 90vw
-}
-
-/* define width of table. Add 16px to width for scrollbar.           */
-/* All other non-IE browsers.                                        */
-html>body div.tableContainer table {
-/*width: 756px*/
-	width: 90vw
-}
-
-/* set table header to a fixed position. WinIE 6.x only                                       */
-/* In WinIE 6.x, any element with a position property set to relative and is a child of       */
-/* an element that has an overflow property set, the relative value translates into fixed.    */
-/* Ex: parent element DIV with a class of tableContainer has an overflow property set to auto */
-thead.fixedHeader tr {
-	position: relative
-
-}
-
-/* set THEAD element to have block level attributes. All other non-IE browsers            */
-/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */
-html>body thead.fixedHeader tr {
-	display: block
-}
-
-/* make the TH elements pretty */
-thead.fixedHeader th {
-	background: #C96;
-	border-left: 1px solid #EB8;
-	border-right: 1px solid #B74;
-	border-top: 1px solid #EB8;
-	font-weight: normal;
-	text-align: left
-}
-
-/* define the table content to be scrollable                                              */
-/* set TBODY element to have block level attributes. All other non-IE browsers            */
-/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */
-/* induced side effect is that child TDs no longer accept width: auto                     */
-html>body tbody.scrollContent {
-	display: block;
-	/*height: 262px;*/
-	height: 80vh;
-	overflow: auto;
-	width: 100%
-}
-
-/* make TD elements pretty. Provide alternating classes for striping the table */
-/* http://www.alistapart.com/articles/zebratables/                             */
-tbody.scrollContent td, tbody.scrollContent tr.normalRow td {
-	background: #FFF;
-	border-bottom: none;
-	border-left: none;
-	border-right: 1px solid #CCC;
-	border-top: 1px solid #DDD;
-	padding: 2px 3px 3px 4px
-}
-
-tbody.scrollContent tr.alternateRow td {
-	background: #EEE;
-	border-bottom: none;
-	border-left: none;
-	border-right: 1px solid #CCC;
-	border-top: 1px solid #DDD;
-	padding: 2px 3px 3px 4px
-}
-tr b {
-    background-color: #FFFFFF;
-    color: #ff0000;
-}
-
-/* define width of TH elements: 1st, 2nd, and 3rd respectively.          */
-/* Add 16px to last TH for scrollbar padding. All other non-IE browsers. */
-/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors --
-  --*/
-html>body thead.fixedHeader th {
-       width: 18vw
-}
-html>body tbody.scrollContent td {
-       width: 18vw
-}
-
-
-
--->
-</style>
-
-</head>
-
-<body>
-<p>This is an auto generated comparison from manually filled *.profiles for FEA software. It is also available in <a href="http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html">HTML format</a>. Profiles in table are sorted with the number of filled keys.</p>
+</thead>
+<tbody>
+  <tr><td>website:</td><td>http://home.gna.org/getfem/</td><td>www.dealii.org</td><td>http://fenicsproject.org/</td><td>http://firedrakeproject.org/</td><td>http://libmesh.github.io/</td><td>https://www.comsol.com</td></tr>
+  <tr><td>license:</td><td>LGPL</td><td>LGPL</td><td>GNU GPL\LGPL</td><td>GNU LGPL</td><td>GPL</td><td></td></tr>
+  <tr><td>GUI:</td><td>No</td><td>No</td><td>Postprocessing only</td><td>No</td><td>No</td><td>Yes</td></tr>
+  <tr><td>Community:</td><td>Mailing list</td><td><a href="https://groups.google.com/forum/#!forum/dealii">Google Group</a></td><td>Mailing list</td><td>Mailing list and IRC channel</td><td><a href="http://sourceforge.net/p/libmesh/mailman/">mail lists</a></td><td></td></tr>
+  <tr><td>Documentation:</td><td>User doc, tutorials, demos, developper&#8217;s guide</td><td>50+ tutorials, 50+ video lectures, Doxygen</td><td>Tutorial, demos (how many?), 700-page book</td><td>Manual, demos, API reference</td><td>Doxygen, 40+ example codes</td><td></td></tr>
+  <tr><td><b>Mesh</b></tr>
+  <tr><td>mesh elements:</td><td>intervals, triangles, tetrahedra, quads, hexes, prisms, some 4D elements, easily extensible.</td><td>intervals (1d), quads (2d), and hexes (3d) only</td><td>intervals, triangles, tetrahedra (quads, hexes - work in progress)</td><td>intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges</td><td>Tria, Quad, Tetra, Prism, etc.</td><td></td></tr>
+  <tr><td>mesh high-order mapping:</td><td></td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_10.html">any order</a></td><td>(Any - work in progress)</td><td>(Any - using appropriate branches)</td><td></td><td></td></tr>
+  <tr><td>mesh generation:</td><td>Experimental in any dimension + predefined shapes + Extrusion.</td><td>external+predefined shapes</td><td>Yes, <a href="http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html">Constructive Solid Geometry (CSG)</a> supported via mshr (CGAL and Tetgen used as backends)</td><td>External + predefined shapes. Internal mesh extrusion operation.</td><td>Built-in</td><td>Built-in</td></tr>
+  <tr><td>mesh adaptive-refinement:</td><td>Only h</td><td>h, p, and hp for CG and DG</td><td>Only h</td><td></td><td>h, p, mached hp, singular hp</td><td></td></tr>
+  <tr><td>mesh input\output:</td><td>gmsh, GiD, Ansys</td><td></td><td>XDMF (and FEniCS XML)</td><td></td><td></td><td></td></tr>
+  <tr><td>mesh check:</td><td>?</td><td></td><td>intersections (collision testing)</td><td></td><td></td><td></td></tr>
+  <tr><td>CAD files support:</td><td>No</td><td>IGES, STEP (with <a href="https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html">OpenCascade wrapper</a>)</td><td></td><td></td><td></td><td>STEP, IGES and <a href="https://www.comsol.com/cad-import-module">many others</a>.</td></tr>
+  <tr><td>mesh operation:</td><td>Extrude, rotate, translation, refine</td><td></td><td></td><td></td><td>distort/translate/rotate/scale</td><td></td></tr>
+  <tr><td><b>Parallel possibilities</b></tr>
+  <tr><td>automatic mesh partitioning:</td><td>Yes (METIS)</td><td>yes, shared (METIS/Parmetis) and distributed (p4est)</td><td>Yes (ParMETIS and SCOTCH)</td><td>Yes</td><td></td><td></td></tr>
+  <tr><td>MPI:</td><td>Yes</td><td>Yes (up to 16k processes), <a href="http://dealii.org/developer/doxygen/deal.II/step_40.html#Results">test data for 4k processes</a></td><td>Yes, <a href="http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537">DOLFIN solver scales up to 24k</a></td><td>Yes, <a href="https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling">Scaling plot for Firedrake out to 24k cores.</a></td><td>Yes</td><td></td></tr>
+  <tr><td>threads:</td><td></td><td>Threading Build Blocks</td><td></td><td></td><td>Yes</td><td></td></tr>
+  <tr><td>OpenMP:</td><td>Yes</td><td>Yes (vectorization only)</td><td></td><td>Limited</td><td></td><td></td></tr>
+  <tr><td>OpenCL:</td><td>No</td><td>No</td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>CUDA:</td><td>No</td><td>No</td><td></td><td></td><td></td><td></td></tr>
+  <tr><td><b>Solver</b></tr>
+  <tr><td>Dimension:</td><td>Any, possibility to mix and couple problem of different dimension</td><td>1/2/3D</td><td>1/2/3D</td><td>1/2/3D</td><td>2D\3D</td><td></td></tr>
+  <tr><td>FE:</td><td>Continuous and discontinuous Lagrange, Hermite, Argyris, Morley, Nedelec, Raviart-Thomas, composite elements (HCT, FVS), Hierarchical elements, Xfem, easily extensible.</td><td>Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.</td><td>Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any</td><td>Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the <a href="http://femtable.org">Periodic Table</a>, any</td><td>Lagrange, Hierarchic, Discontinuous Monomials</td><td></td></tr>
+  <tr><td>Predifined equations:</td><td>Model bricks: Laplace, linear and nonlinear elasticity, Helmholtz, plasticity, Mindlin and K.L. plates, boundary conditions including contact with friction.</td><td>Laplace?</td><td></td><td></td><td>No</td><td>Yes, via modules</td></tr>
+  <tr><td>Automated assembly:</td><td>Yes</td><td></td><td>Yes</td><td>Yes</td><td></td><td></td></tr>
+  <tr><td>Visualization:</td><td>External or with the Scilab/Matlab/Python interface. Possibility to perform complex slices.</td><td>External (export to *.vtk and many others)</td><td>Buil-in simple plotting + External</td><td>External</td><td>No</td><td>Built-in</td></tr>
+  <tr><td>Output format:</td><td>vtk, gmsh, OpenDX.</td><td>*.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5</td><td>VTK(.pvd, .vtu) and XDMF/HDF5</td><td>VTK(.pvd, .vtu)</td><td></td><td></td></tr>
+  <tr><td>Boundary elements solver:</td><td>No</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_34.html">Yes</a></td><td>No</td><td>No</td><td></td><td></td></tr>
+  <tr><td>Use multiple meshes:</td><td>Yes including different dimensions and taking account of any transformation.</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement">Yes, autorefined from same initial mesh for each variable of a coupled problem</a></td><td>Yes, including non-matching meshes</td><td>Yes</td><td></td><td></td></tr>
+  <tr><td><b>Linear algebra</b></tr>
+  <tr><td>Used libs:</td><td>SuperLU, MUMPS, Built-in.</td><td>Built-in + Trilinos, PETSc, and SLEPc</td><td>PETSc, Trilinos/TPetra, Eigen.</td><td>PETSc</td><td>PETSc, Trilinos, LASPack,  SLEPc</td><td></td></tr>
+  <tr><td>Iterative matrix solvers:</td><td>All Krylov</td><td>All Krylov (CG, Minres, GMRES, BiCGStab, QMRS)</td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
+  <tr><td>Preconditioners:</td><td>Basic ones (ILU, ILUT)</td><td>Many, including algebraic multigrid (via Hypre and ML) and geometric multigrid</td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
+  <tr><td><b>Matrix-free</b></tr>
+  <tr><td>matrix-free:</td><td>No</td><td>Yes</td><td></td><td>Yes</td><td></td><td></td></tr>
+  <tr><td>matrix-free save memory:</td><td>No</td><td>Yes</td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>matrix-free speed-up:</td><td>No</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix">Yes</a></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td><b>Used language</b></tr>
+  <tr><td>Native language:</td><td>C++</td><td>C++</td><td>C++</td><td>Python (and generated C)</td><td>C++</td><td></td></tr>
+  <tr><td>Bindings to language:</td><td>Python, Scilab or Matlab</td><td>No</td><td>Python</td><td></td><td></td><td></td></tr>
+  <tr><td><b>Other</b></tr>
+  <tr><td>Symbolic derivation of the tangent system for nonlinear problems:</td><td>Yes.</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Coupled nonlinear problems:</td><td>Yes</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Support for fictitious domain methods:</td><td>Yes</td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Binary:</td><td>Linux (Debian/Ubuntu)</td><td>Windows (work in progress), Mac</td><td>Linux (Debian\Ubuntu), Mac</td><td>No. Automated installers for Linux and Mac</td><td></td><td></td></tr>
+  <tr><td>Wilkinson Prize:</td><td></td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2007</a></td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2015 for dolfin-adjoint</a></td><td></td><td></td><td></td>
+    <p>This is an auto generated comparison from manually filled *.profiles for FEA software. It is also available in <a href="http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html">HTML format</a>. Profiles in table are sorted with the number of filled keys.</p>
+  </tr>
+</table>
 <h2>Profile format</h2>
 <p>Profile is read line-by-line.  Any string before semicolon &#8216;:&#8217; is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash &#8216;#&#8217; in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).
   Use generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem).</p>
-<div id="tableContainer" class="tableContainer">
-<table border="0" cellpadding="0" cellspacing="0" width="100%" class="scrollTable">
-<thead class="fixedHeader">
-  <tr class="alternateRow"><th>Feature</th><th>GetFEM++</th><th>Deal II</th><th>FEniCS</th><th>Firedrake</th><th>libMesh</th><th>COMSOL(R)</th></tr>
-
-</thead>
-<tbody class="scrollContent">
-  <tr class="normalRow"><td>website:</td><td>http://home.gna.org/getfem/</td><td>www.dealii.org</td><td>http://fenicsproject.org/</td><td>http://firedrakeproject.org/</td><td>http://libmesh.github.io/</td><td>https://www.comsol.com</td></tr>
-  <tr class="alternateRow"><td>license:</td><td>LGPL</td><td>LGPL</td><td>GNU GPL\LGPL</td><td>GNU LGPL</td><td>GPL</td><td></td></tr>
-  <tr class="normalRow"><td>GUI:</td><td>No</td><td>No</td><td>Postprocessing only</td><td>No</td><td>No</td><td>Yes</td></tr>
-  <tr class="alternateRow"><td>Community:</td><td>Mailing list</td><td><a href="https://groups.google.com/forum/#!forum/dealii">Google Group</a></td><td>Mailing list</td><td>Mailing list and IRC channel</td><td><a href="http://sourceforge.net/p/libmesh/mailman/">mail lists</a></td><td></td></tr>
-  <tr class="normalRow"><td>Documentation:</td><td>User doc, tutorials, demos, developper&#8217;s guide</td><td>50+ tutorials, 50+ video lectures, Doxygen</td><td>Tutorial, demos (how many?), 700-page book</td><td>Manual, demos, API reference</td><td>Doxygen, 40+ example codes</td><td></td></tr>
-  <tr class="normalRow"><td><b>Mesh</b></tr>
-  <tr class="alternateRow"><td>mesh elements:</td><td>intervals, triangles, tetrahedra, quads, hexes, prisms, some 4D elements, easily extensible.</td><td>intervals (1d), quads (2d), and hexes (3d) only</td><td>intervals, triangles, tetrahedra (quads, hexes - work in progress)</td><td>intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges</td><td>Tria, Quad, Tetra, Prism, etc.</td><td></td></tr>
-  <tr class="normalRow"><td>mesh high-order mapping:</td><td></td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_10.html">any order</a></td><td>(Any - work in progress)</td><td>(Any - using appropriate branches)</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>mesh generation:</td><td>Experimental in any dimension + predefined shapes + Extrusion.</td><td>external+predefined shapes</td><td>Yes, <a href="http://fenicsproject.org/documentation/dolfin/1.4.0/python/demo/documented/csg-2D/python/documentation.html">Constructive Solid Geometry (CSG)</a> supported via mshr (CGAL and Tetgen used as backends)</td><td>External + predefined shapes. Internal mesh extrusion operation.</td><td>Built-in</td><td>Built-in</td></tr>
-  <tr class="normalRow"><td>mesh adaptive-refinement:</td><td>Only h</td><td>h, p, and hp for CG and DG</td><td>Only h</td><td></td><td>h, p, mached hp, singular hp</td><td></td></tr>
-  <tr class="alternateRow"><td>mesh input\output:</td><td>gmsh, GiD, Ansys</td><td></td><td>XDMF (and FEniCS XML)</td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>mesh check:</td><td>?</td><td></td><td>intersections (collision testing)</td><td></td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>CAD files support:</td><td>No</td><td>IGES, STEP (with <a href="https://dealii.org/developer/doxygen/deal.II/group__OpenCASCADE.html">OpenCascade wrapper</a>)</td><td></td><td></td><td></td><td>STEP, IGES and <a href="https://www.comsol.com/cad-import-module">many others</a>.</td></tr>
-  <tr class="normalRow"><td>mesh operation:</td><td>Extrude, rotate, translation, refine</td><td></td><td></td><td></td><td>distort/translate/rotate/scale</td><td></td></tr>
-  <tr class="normalRow"><td><b>Parallel possibilities</b></tr>
-  <tr class="alternateRow"><td>automatic mesh partitioning:</td><td>Yes (METIS)</td><td>yes, shared (METIS/Parmetis) and distributed (p4est)</td><td>Yes (ParMETIS and SCOTCH)</td><td>Yes</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>MPI:</td><td>Yes</td><td>Yes (up to 16k processes), <a href="http://dealii.org/developer/doxygen/deal.II/step_40.html#Results">test data for 4k processes</a></td><td>Yes, <a href="http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537">DOLFIN solver scales up to 24k</a></td><td>Yes, <a href="https://github.com/firedrakeproject/firedrake/wiki/Gravity-wave-scaling">Scaling plot for Firedrake out to 24k cores.</a></td><td>Yes</td><td></td></tr>
-  <tr class="alternateRow"><td>threads:</td><td></td><td>Threading Build Blocks</td><td></td><td></td><td>Yes</td><td></td></tr>
-  <tr class="normalRow"><td>OpenMP:</td><td>Yes</td><td>Yes (vectorization only)</td><td></td><td>Limited</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>OpenCL:</td><td>No</td><td>No</td><td></td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>CUDA:</td><td>No</td><td>No</td><td></td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td><b>Solver</b></tr>
-  <tr class="alternateRow"><td>Dimension:</td><td>Any, possibility to mix and couple problem of different dimension</td><td>1/2/3D</td><td>1/2/3D</td><td>1/2/3D</td><td>2D\3D</td><td></td></tr>
-  <tr class="normalRow"><td>FE:</td><td>Continuous and discontinuous Lagrange, Hermite, Argyris, Morley, Nedelec, Raviart-Thomas, composite elements (HCT, FVS), Hierarchical elements, Xfem, easily extensible.</td><td>Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.</td><td>Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any</td><td>Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the <a href="http://femtable.org">Periodic Table</a>, any</td><td>Lagrange, Hierarchic, Discontinuous Monomials</td><td></td></tr>
-  <tr class="alternateRow"><td>Predifined equations:</td><td>Model bricks: Laplace, linear and nonlinear elasticity, Helmholtz, plasticity, Mindlin and K.L. plates, boundary conditions including contact with friction.</td><td>Laplace?</td><td></td><td></td><td>No</td><td>Yes, via modules</td></tr>
-  <tr class="normalRow"><td>Automated assembly:</td><td>Yes</td><td></td><td>Yes</td><td>Yes</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>Visualization:</td><td>External or with the Scilab/Matlab/Python interface. Possibility to perform complex slices.</td><td>External (export to *.vtk and many others)</td><td>Buil-in simple plotting + External</td><td>External</td><td>No</td><td>Built-in</td></tr>
-  <tr class="normalRow"><td>Output format:</td><td>vtk, gmsh, OpenDX.</td><td>*.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5</td><td>VTK(.pvd, .vtu) and XDMF/HDF5</td><td>VTK(.pvd, .vtu)</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>Boundary elements solver:</td><td>No</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_34.html">Yes</a></td><td>No</td><td>No</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>Use multiple meshes:</td><td>Yes including different dimensions and taking account of any transformation.</td><td><a href="http://dealii.org/developer/doxygen/deal.II/step_28.html#Meshesandmeshrefinement">Yes, autorefined from same initial mesh for each variable of a coupled problem</a></td><td>Yes, including non-matching meshes</td><td>Yes</td><td></td><td></td></tr>
-  <tr class="normalRow"><td><b>Linear algebra</b></tr>
-  <tr class="alternateRow"><td>Used libs:</td><td>SuperLU, MUMPS, Built-in.</td><td>Built-in + Trilinos, PETSc, and SLEPc</td><td>PETSc, Trilinos/TPetra, Eigen.</td><td>PETSc</td><td>PETSc, Trilinos, LASPack,  SLEPc</td><td></td></tr>
-  <tr class="normalRow"><td>Iterative matrix solvers:</td><td>All Krylov</td><td>All Krylov (CG, Minres, GMRES, BiCGStab, QMRS)</td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
-  <tr class="alternateRow"><td>Preconditioners:</td><td>Basic ones (ILU, ILUT)</td><td>Many, including algebraic multigrid (via Hypre and ML) and geometric multigrid</td><td></td><td></td><td>LASPack serial, PETSc parallel</td><td></td></tr>
-  <tr class="normalRow"><td><b>Matrix-free</b></tr>
-  <tr class="alternateRow"><td>matrix-free:</td><td>No</td><td>Yes</td><td></td><td>Yes</td><td></td><td></td></tr>
-  <tr class="normalRow"><td>matrix-free save memory:</td><td>No</td><td>Yes</td><td></td><td></td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>matrix-free speed-up:</td><td>No</td><td><a href="https://www.dealii.org/developer/doxygen/deal.II/step_37.html#Comparisonwithasparsematrix">Yes</a></td><td></td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td><b>Used language</b></tr>
-  <tr class="alternateRow"><td>Native language:</td><td>C++</td><td>C++</td><td>C++</td><td>Python (and generated C)</td><td>C++</td><td></td></tr>
-  <tr class="normalRow"><td>Bindings to language:</td><td>Python, Scilab or Matlab</td><td>No</td><td>Python</td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td><b>Other</b></tr>
-  <tr class="alternateRow"><td>Symbolic derivation of the tangent system for nonlinear problems:</td><td>Yes.</td><td></td><td></td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>Coupled nonlinear problems:</td><td>Yes</td><td></td><td></td><td></td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>Support for fictitious domain methods:</td><td>Yes</td><td></td><td></td><td></td><td></td><td></td></tr>
-  <tr class="normalRow"><td>Binary:</td><td>Linux (Debian/Ubuntu)</td><td>Windows (work in progress), Mac</td><td>Linux (Debian\Ubuntu), Mac</td><td>No. Automated installers for Linux and Mac</td><td></td><td></td></tr>
-  <tr class="alternateRow"><td>Wilkinson Prize:</td><td></td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2007</a></td><td><a href="http://www.nag.co.uk/other/WilkinsonPrize.html">2015 for dolfin-adjoint</a></td><td></td><td></td><td></td></tr>
-</table>
 </body></html>

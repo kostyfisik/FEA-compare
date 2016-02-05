@@ -1,0 +1,49 @@
+.outerbox {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.outerbox .innerbox {
+   width: 100%;     /* DEFINES TABLES WIDTH */
+}
+.innerbox {
+    display: inline;
+    float: left;
+    height: 600px;       /* DEFINES TABLES HEIGHT */
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+.bluetable td, .bluetable th {
+    border: 1px solid #758796;
+    padding: 3px;
+}
+.bluetable {
+    font-family: sans-serif;
+}
+.bluetable tbody tr td {
+    background-color: #eff3fa;
+    color: #262c31;
+    font-size: 18px;
+}
+.bluetable tbody tr.odd td {
+    background-color: #d6e0ef;
+}
+.bluetable thead tr th,
+.bluetable thead tr td,
+.bluetable tfoot tr th, 
+.bluetable tfoot tr td {
+    background-color: #8ca8ce;
+    color: #121517;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #e8ebee;
+}
