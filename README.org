@@ -1,11 +1,12 @@
 
 ** Overview
-This is an auto generated comparison from manually filled `*.profiles` for FEA software. It is also available in HTML format ([[https://cdn.rawgit.com/kostyfisik/FEA-compare/6dcc77eb80738867f5c0d5f55336289f425fec56/table.html][preview 1]], [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][preview 2]]) with first row and *Feature* column being fixed for ease of table exploration. Profiles in table are sorted with the number of filled keys.
+This is an auto generated comparison from manually filled `*.profiles` for FEA software. It is also available in HTML format ([[https://cdn.rawgit.com/kostyfisik/FEA-compare/374b13f894b2429003c1ccf48c5f94828901e2d8/table.html][preview 1]], [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][preview 2]]) with first row and *Feature* column being fixed for ease of table exploration. Profiles in table are sorted with the number of filled keys.
 
 ** Profile format
  Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).
 Use generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). 
-|Feature|GetFEM++|Deal II|Elmerfem|FEniCS|Firedrake|libMesh|COMSOL(R)|
+**Contribution
+Fill free to contribute! There is still a lot of codes, not compared it the table, e.g: NgSolve, CalculiX and Salomé + Code_Aster / Code_Saturne, ANSYS, NASTRAN, CFD-ACE+, COSMOSWORKS. Comsol(R) description is poor.|Feature|GetFEM++|Deal II|Elmerfem|FEniCS|Firedrake|libMesh|COMSOL(R)|
 |--+--+--+--+--+--+--+--|
 |website:|[[http://home.gna.org/getfem/][http://home.gna.org/getfem/]]|[[www.dealii.org][www.dealii.org]]|[[https://www.csc.fi/elmer][https://www.csc.fi/elmer]]|[[http://fenicsproject.org/][http://fenicsproject.org/]]|[[http://firedrakeproject.org/][http://firedrakeproject.org/]]|[[http://libmesh.github.io/][http://libmesh.github.io/]]|[[https://www.comsol.com][https://www.comsol.com]]|
 |license:|LGPL|LGPL|GNU (L)GPL|GNU GPL\LGPL|GNU LGPL|GPL|  |
