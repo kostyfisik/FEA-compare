@@ -106,4 +106,5 @@ with open('table.html', 'w') as new_f:
                 line = "</tbody>\n</table>\n</div></div>\n"
             new_f.write(line)
 
-# os.system('rm -f table.tmp')
+os.system('rm -f table.tmp')
+os.system('rm -f tmp.org')
