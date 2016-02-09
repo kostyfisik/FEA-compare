@@ -51,3 +51,5 @@ Native language: C++
 Bindings to language:
 
     Other
+    
+Optimization Solvers: Support for TAO- and nlopt-based constrained optimization solvers incorporating gradient and Hessian information.
