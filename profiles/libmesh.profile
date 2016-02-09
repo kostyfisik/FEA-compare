@@ -27,6 +27,7 @@ CUDA:
 
 Dimension: 2D\3D
 FE: Lagrange, Hierarchic, Discontinuous Monomials
+Quadrature: Gauss-Legendre (1D and tensor product rules in 2D and 3D) tabulated up to 44th-order to high precision, best available rules for triangles and tetrahedra to very high order, best available monomial rules for quadrilaterals and hexahedra.
 Predifined equations: No
 Visualization: No
 Output format:

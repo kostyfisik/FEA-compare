@@ -29,6 +29,7 @@ CUDA:
 
 Dimension:
 FE:
+Quadrature:
 Predifined equations:
 Automated assembly:
 Visualization:
