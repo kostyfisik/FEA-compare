@@ -55,3 +55,4 @@ Bindings to language: No
 
     Other
 
+Testing: [[https://dealii.org/developer/developers/testsuite.html][3500+ tests]]

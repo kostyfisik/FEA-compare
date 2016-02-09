@@ -54,5 +54,5 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Support for fictitious domain methods:|Yes|  |  |  |  |  |  |
 |Binary:|Linux (Debian/Ubuntu)|Linux, Windows (work in progress), Mac|Windows, Linux (launchpad: Debian/Ubuntu), Mac (homebrew) (all with MPI)|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
 |Wilkinson Prize:|  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]|  |[[http://www.nag.co.uk/other/WilkinsonPrize.html][2015 for dolfin-adjoint]]|  |  |  |
+|Testing:|  |[[https://dealii.org/developer/developers/testsuite.html][3500+ tests]]|More than 400 consistency tests ensuring backward compatibility|  |  |  |  |
 |fullname:|  |  |Elmer finite element software|  |  |  |  |
-|Testing:|  |  |More than 400 consistency tests ensuring backward compatibility|  |  |  |  |
