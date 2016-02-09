@@ -1,4 +1,5 @@
-name: Elmerfem, Elmer finite element software 
+name: Elmerfem
+fullname: Elmer finite element software 
 website: [[https://www.csc.fi/elmer][https://www.csc.fi/elmer]]
 license: GNU (L)GPL
 GUI: Yes, partial functionality
