@@ -1,6 +1,6 @@
 
 ** Overview
- This is an [[https://github.com/kostyfisik/FEA-compare][auto generated comparison]] from manually filled `*.profiles` for FEA software. It is also available in HTML format [[https://cdn.rawgit.com/kostyfisik/FEA-compare/35613b02b65a17b567e81dc9c9908b8439cd94f2/table.html][preview 1]] (fast and correct rendering of html table from previous commit), [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][preview 2]] (a bit slow, had problems with Firefox, usually current commit) with first row and *Feature* column being fixed for ease of table exploration. Profiles in table are sorted with the number of filled keys.
+ This is an [[https://github.com/kostyfisik/FEA-compare][auto generated comparison]] from manually filled `*.profiles` for FEA software. It is also available in HTML format [[https://cdn.rawgit.com/kostyfisik/FEA-compare/2e98ff8c84e66f7d8d9ab6c4c61db5e62c6d8d02/table.html][preview 1]] (fast and correct rendering of html table from previous commit), [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][preview 2]] (a bit slow, had problems with Firefox, usually current commit) with first row and *Feature* column being fixed for ease of table exploration. Profiles in table are sorted with the number of filled keys.
 
 ** Profile format
  Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).
@@ -15,7 +15,7 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |license:|LGPL|LGPL|GNU (L)GPL|GNU GPL\LGPL|GNU LGPL|GPL|  |
 |GUI:|No|No|Yes, partial functionality|Postprocessing only|No|No|Yes|
 |Community:|Mailing list|[[https://groups.google.com/forum/#!forum/dealii][Google Group]]|1000's of users, discussion forum, mailing list|Mailing list|Mailing list and IRC channel|[[http://sourceforge.net/p/libmesh/mailman/][mail lists]]|  |
-|Documentation:|User doc, tutorials, demos, developper's guide|50+ tutorials, 50+ video lectures, Doxygen|ElmerSolver Manual, Elmer Models Manual, ElmerGUI Tutorials, etc. (>700 pages of LaTeX documentation)|Tutorial, demos (how many?), 700-page book|Manual, demos, API reference|Doxygen, 40+ example codes|  |
+|Documentation:|User doc, tutorials, demos, developer's guide|50+ tutorials, 50+ video lectures, Doxygen|ElmerSolver Manual, Elmer Models Manual, ElmerGUI Tutorials, etc. (>700 pages of LaTeX documentation)|Tutorial, demos (how many?), 700-page book|Manual, demos, API reference|Doxygen, 40+ example codes|  |
 | *Mesh* 
 |mesh elements:|intervals, triangles, tetrahedra, quads, hexes, prisms, some 4D elements, easily extensible.|intervals (1d), quads (2d), and hexes (3d) only|intervals (1d), triangles, quadrilaterals (2d), tetrahedra, pyramids, wedges, hexahedra (3d)|intervals, triangles, tetrahedra (quads, hexes - work in progress)|intervals, triangles, tetrahedra, quads, plus extruded meshes of hexes and wedges|Tria, Quad, Tetra, Prism, etc.|  |
 |mesh high-order mapping:|  |[[http://dealii.org/developer/doxygen/deal.II/step_10.html][any order]]|Yes, for Lagrange elements|(Any - work in progress)|(Any - using appropriate branches)|  |Any? [[https://www.comsol.com/blogs/keeping-track-of-element-order-in-multiphysics-models/][ Second-order is the default for most cases.]]|
@@ -36,7 +36,7 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Dimension:|Any, possibility to mix and couple problem of different dimension|1/2/3D|1D/2D/3D (dimensions may coexist)|1/2/3D|1/2/3D|2D\3D|  |
 |FE:|Continuous and discontinuous Lagrange, Hermite, Argyris, Morley, Nedelec, Raviart-Thomas, composite elements (HCT, FVS), Hierarchical elements, Xfem, easily extensible.|Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.|Lagrange elements, p-elements up to 10th order, Hcurl conforming elements (linear and quadratic) for|Lagrange, BDM, RT, Nedelic, Crouzeix-Raviart, all simplex elements in the Periodic Table (femtable.org), any|Lagrange, BDM, RT, Nedelec, all simplex elements and Q- quad elements in the [[http://femtable.org][Periodic Table]], any|Lagrange, Hierarchic, Discontinuous Monomials|  |
 |Quadrature:|  |  |  |  |  |Gauss-Legendre (1D and tensor product rules in 2D and 3D) tabulated up to 44th-order to high precision, best available rules for triangles and tetrahedra to very high order, best available monomial rules for quadrilaterals and hexahedra.|  |
-|Predifined equations:|Model bricks: Laplace, linear and nonlinear elasticity, Helmholtz, plasticity, Mindlin and K.L. plates, boundary conditions including contact with friction.|Laplace?|Around 40 predefined solvers|  |  |No|Yes, via modules|
+|Predifined equations:|  |Laplace?|Around 40 predefined solvers|  |  |No|Yes, via modules|
 |Automated assembly:|Yes|  |  |Yes|Yes|  |  |
 |Visualization:|External or with the Scilab/Matlab/Python interface. Possibility to perform complex slices.|External (export to *.vtk and many others)|ElmerPost, VTK widget (but Paraview is recommended)|Buil-in simple plotting + External|External|No|Built-in|
 |Output format:|vtk, gmsh, OpenDX.|*.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5|Several output formats (VTU, gmsh,...)|VTK(.pvd, .vtu) and XDMF/HDF5|VTK(.pvd, .vtu)|  |  |
@@ -54,7 +54,8 @@ Use generate-comparison.py to generate a table from profiles, you will need to i
 |Native language:|C++|C++|Fortran (2003 standard)|C++|Python (and generated C)|C++|  |
 |Bindings to language:|Python, Scilab or Matlab|No|  |Python|  |  |  |
 | *Other* 
-|Symbolic derivation of the tangent system for nonlinear problems:|Yes.|  |  |  |  |  |  |
+|Predefined equations:|Model bricks: Laplace, linear and nonlinear elasticity, Helmholtz, plasticity, Mindlin and K.L. plates, boundary conditions including contact with friction.|  |  |  |  |  |  |
+|Symbolic derivation of the tangent system for nonlinear problems:|Yes|  |  |  |  |  |  |
 |Coupled nonlinear problems:|Yes|  |  |  |  |  |  |
 |Support for fictitious domain methods:|Yes|  |  |  |  |  |  |
 |Binary:|Linux (Debian/Ubuntu)|Linux, Windows (work in progress), Mac|Windows, Linux (launchpad: Debian/Ubuntu), Mac (homebrew) (all with MPI)|Linux (Debian\Ubuntu), Mac|No. Automated installers for Linux and Mac|  |  |
