@@ -8,7 +8,7 @@ Documentation:
     Mesh
 
 mesh elements:
-mesh high-order mapping:
+mesh high-order mapping: Any? [[https://www.comsol.com/blogs/keeping-track-of-element-order-in-multiphysics-models/][ Second-order is the default for most cases.]]
 mesh generation: Built-in
 mesh input\output:
 mesh adaptive-refinement:
