@@ -24,7 +24,7 @@ MPI: Yes (up to 16k processes), [[http://dealii.org/developer/doxygen/deal.II/st
 threads: Threading Build Blocks
 OpenMP: Yes (vectorization only)
 OpenCL: No
-CUDA: No
+CUDA: work in progress
 
     Linear algebra
 
@@ -36,6 +36,9 @@ Preconditioners: Many, including algebraic multigrid (via Hypre and ML) and geom
 
 Dimension: 1/2/3D
 FE: Lagrange elements of any order, continuous and discontinuous; Nedelec and Raviart-Thomas elements of any order; BDM and Bernstein; elements composed of other elements.
+Transient problems: Any user implemented and/or from a set of predifined. Explicit methods: forward Euler, 3rd and 4th order Runge-Kutta. Implicit methods: backward Euler, implicit Midpoint, Crank-Nicolson, SDIRK. Embedded explicit methods: Heun-Euler, Bogacki-Shampine, Dopri, Fehlberg, Cash-Karp.
+
+Quadrature: Gauss-Legendre, Gauss-Lobatto, midpoint, trapezoidal,  Simpson, Milne and Weddle (closed Newton-Cotes for 4 and 7 order polinomials), Gauss quadrature with logarithmic or 1/R weighting function, Telles quadrature of arbitrary order.
 Predifined equations: Laplace?
 Visualization: External (export to *.vtk and many others)
 Output format: *.dx *.ucd *.gnuplot *.povray *.eps *.gmv *.tecplot *.tecplot_binary *.vtk *.vtu *.svg *.hdf5 
