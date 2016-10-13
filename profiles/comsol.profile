@@ -18,7 +18,7 @@ CAD files support: STEP, IGES and [[https://www.comsol.com/cad-import-module][ma
 
     Parallel possibilities
 
-MPI: Almost ideal for parameter sweep? For large scale simulations  Comsol 4.2 (bench by Pepper)[https://www.comsol.ru/paper/download/83777/pepper_presentation.pdf] has 19.2 speedup on 24 core cluster (0.8 efficiency).
+MPI: Almost ideal for parameter sweep? For large scale simulations  Comsol 4.2 [[https://www.comsol.ru/paper/download/83777/pepper_presentation.pdf][bench by Pepper]] has 19.2 speedup on 24 core cluster (0.8 efficiency).
 threads:
 OpenMP:
 OpenCL:
