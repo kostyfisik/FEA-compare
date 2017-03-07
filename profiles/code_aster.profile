@@ -1,5 +1,5 @@
 name: code_aster
-website: www.code-aster.org
+website: [[www.code-aster.org][www.code-aster.org]]
 license: GPL
 GUI: Yes (Salome-Meca)
 Community: discussion forum, Bitbucket forge
