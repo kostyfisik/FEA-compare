@@ -20,8 +20,7 @@ CAD files support: IGES, STEP (with [[https://dealii.org/developer/doxygen/deal.
     Parallel possibilities
 
 automatic mesh partitioning: yes, shared (METIS/Parmetis) and distributed (p4est)
-MPI: Yes (up to 147k processes), [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][test for 4k processes]]
-[[https://www.dealii.org/deal85-preprint.pdf][geometric multigrid for 147k, strong and weak scaling]]
+MPI: Yes (up to 147k processes), test for [[http://dealii.org/developer/doxygen/deal.II/step_40.html#Results][4k processes]] and [[https://www.dealii.org/deal85-preprint.pdf][geometric multigrid for 147k, strong and weak scaling]]
 threads: Threading Build Blocks
 OpenMP: Yes (vectorization only)
 OpenCL: No
