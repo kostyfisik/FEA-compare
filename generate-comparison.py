@@ -116,7 +116,7 @@ os.system('rm -f *.tmp')
 os.system('rm -f tmp.org')
 
 # Generate Mediawiki table (for Wikipedia)
-header = '{| class="wikitable"\n|-\n! Feature\n'
+header = '{| class="wikitable sortable"\n|-\n! Feature\n'
 for profile in all_profiles:
     header += '!'+profile[all_keys[0]]+'\n'
 header += "|-"
