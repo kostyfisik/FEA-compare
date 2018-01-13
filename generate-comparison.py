@@ -114,3 +114,28 @@ with open('table.html', 'w') as new_f:
 
 os.system('rm -f *.tmp')
 os.system('rm -f tmp.org')
+
+# Generate Mediawiki table (for Wikipedia)
+header = '{| class="wikitable"\n|-\n! Feature\n'
+for profile in all_profiles:
+    header += '!'+profile[all_keys[0]]+'\n'
+header += "|-"
+
+all_table = header + "\n"
+for key in all_keys[1:]:
+    if not key[-1]==':':
+        all_table += """| colspan="100500" | '''"""+key+"""''' \n|-\n"""
+        continue
+    all_table += "| "+key+"\n" 
+    for profile in all_profiles:
+        value = profile.get(key)
+        value = str(value).replace("]["," ").replace("[[","[").replace("]]","]")
+        if not value=="None":
+            all_table += "| "+value+"\n"
+        else:
+            all_table += "|"+"\n"
+    all_table += "|-\n"
+all_table = all_table[:-2]+"}\n"
+with open('tmp.wiki', "w") as myfile:
+    myfile.write(all_table)
+    
