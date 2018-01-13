@@ -1,10 +1,9 @@
 name:  FEATool Multiphysics
 website: [[https://www.featool.com/][https://www.featool.com/]]
-license: 
+license: Proprietary
 GUI: Matlab and Octave GUI
 Community: Mailing list
-Documentation: [[https://www.featool.com/doc][Online FEATool
-documentation]], ~600 pages, ~20 step-by-step tutorials, and 85 m-script model examples
+Documentation: [[https://www.featool.com/doc][Online FEATool documentation]], ~600 pages, ~20 step-by-step tutorials, and 85 m-script model examples
 Wilkinson Prize: 
 Binary: Windows, Linux, Mac
 
