@@ -1,5 +1,5 @@
 name: Range
-website: [[www.range-software.com][www.range-software.com]]
+website: [[http://www.range-software.com][http://www.range-software.com]]
 license: GPL
 GUI: Yes
 Community: GitHub

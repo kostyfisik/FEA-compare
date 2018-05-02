@@ -1,5 +1,5 @@
 name: Deal II
-website: [[www.dealii.org][www.dealii.org]]
+website: [[http://www.dealii.org][http://www.dealii.org]]
 license: LGPL
 GUI: No
 Wilkinson Prize: [[http://www.nag.co.uk/other/WilkinsonPrize.html][2007]]
