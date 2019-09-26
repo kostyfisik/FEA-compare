@@ -24,7 +24,7 @@ MPI: Yes (up to 147k processes), test for [[http://dealii.org/developer/doxygen/
 threads: Threading Build Blocks
 OpenMP: Yes (vectorization only)
 OpenCL: No
-CUDA: work in progress
+CUDA: since 9.1, see [[https://www.dealii.org/developer/doxygen/deal.II/step_64.html][step-64]] for matrix-free GPU+MPI example
 
     Linear algebra
 
