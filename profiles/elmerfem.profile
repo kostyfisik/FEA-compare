@@ -4,7 +4,7 @@ website: [[https://www.csc.fi/elmer][https://www.csc.fi/elmer]]
 license: GNU (L)GPL
 GUI: Yes, partial functionality
 Community: 1000's of users, discussion forum, mailing list [[https://discordapp.com/invite/NeZEBZn][Discord server]]
-Documentation: ElmerSolver Manual, Elmer Models Manual, ElmerGUI Tutorials, etc. (>700 pages of LaTeX documentation)
+Documentation: ElmerSolver Manual, Elmer Models Manual, ElmerGUI Tutorials, etc. (>700 pages of LaTeX documentation available in PDFs)
 
     Mesh
 
@@ -13,24 +13,24 @@ mesh high-order mapping: Yes, for Lagrange elements
 mesh generation: Limited own meshing capabilities with ElmerGrid and netgen/tetgen APIs. Internal extrusion and mesh multiplication on parallel level. 
 mesh input\output: 
 mesh adaptive-refinement: h-refinement for selected equations
-automatic mesh partitioning: partitioning with ElmerGrid using Metis or geometric division
+automatic mesh partitioning: partitioning with ElmerGrid using Metis or geometric division, internal partitioning in ElmerSolver using Zoltan
 CAD files support: Limited support via OpenCASCADE in ElmerGUI
 
     Parallel possibilities
 
 MPI: Yes, demonstrated scalability up to 1000's of cores
-threads: threadsafe, limited threading, work in progress
+threads: threadsafe, some modules threaded and vectorized.
 OpenMP: Yes, partially
 OpenCL: No
-CUDA: No
+CUDA: Preliminary API for sparse linear algebra
 
     Solver
 
 Dimension: 1D/2D/3D (dimensions may coexist)
 FE: Lagrange elements, p-elements up to 10th order, Hcurl conforming elements (linear and quadratic) for
 all shapes, Hdiv conforming elements
-Predifined equations: Around 40 predefined solvers 
-Visualization: ElmerPost, VTK widget (but Paraview is recommended)
+Predifined equations: Around 50 predefined solvers 
+Visualization: ElmerGUI comes VTK based visualization tool (but Paraview is recommended)
 Output format: Several output formats (VTU, gmsh,...)
 Boundary elements solver: Existing but without multipole acceleration (not usable for large problems)
 Use multiple meshes: Continuity of non-conforming interfaces ensured by mortar finite elements
@@ -50,10 +50,10 @@ matrix-free speed-up:
 
     Used language
 
-Native language: Fortran (2003 standard)
+Native language: Fortran (2008 standard)
 Bindings to language: 
 Binary: Windows, Linux (launchpad: Debian/Ubuntu), Mac (homebrew) (all with MPI)
 
     Other
 
-Testing: More than 400 consistency tests ensuring backward compatibility 
+Testing: More than 700 consistency tests ensuring backward compatibility 
