@@ -29,6 +29,8 @@ CUDA:
 
 Dimension:
 FE:
+Quadrature:
+Transient problems:
 Predifined equations:
 Automated assembly:
 Visualization:

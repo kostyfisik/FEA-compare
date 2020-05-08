@@ -71,7 +71,13 @@ for key in all_keys[1:]:
         else:
             all_table += "|  "
     all_table += "|\n"
-disclaimer = "\n** Overview\nThis is an auto generated comparison from manually filled `*.profiles` for FEA software. It is also available in HTML format ([[https://cdn.rawgit.com/kostyfisik/FEA-compare/70a2818ee9a9a60c0377a122bf40822eb555ee81/table.html][preview 1]], [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][preview 2]]) with first row and *Feature* column being fixed for ease of table exploration. Profiles in table are sorted with the number of filled keys.\n\n** Profile format\n Profile is read line-by-line.  Any string before semicolon ':' is treated as a key, the other part till the end of the line as value. Lines without semicolon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with semicolon, table group names are not (for visual ease they are four spaces indented).\nUse generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). \n"
+os.system("git rev-parse HEAD > hash.tmp")
+hash=""
+with open("hash.tmp") as f:
+        for line in f:            
+                hash += line.strip()
+print(hash)
+disclaimer = "\n** Overview\n This is an [[https://github.com/kostyfisik/FEA-compare][auto generated comparison]] from manually filled `*.profiles` for FEA software. It is also available in HTML format [[https://cdn.rawgit.com/kostyfisik/FEA-compare/"+hash+"/table.html][preview 1]] (fast and correct rendering of html table from previous commit), [[http://htmlpreview.github.io/?https://github.com/kostyfisik/FEA-compare/blob/master/table.html][preview 2]] (a bit slow, had problems with Firefox, usually current commit) with first row and *Feature* column being fixed for ease of table exploration. Profiles in table are sorted with the number of filled keys.\n\n** Profile format\n Profile is read line-by-line.  Any string before colon ':' is treated as a key, the other part till the end of the line as value. Lines without colon are ignored, comments should start with hash '#' in the begging of the line.  main-keys.txt file contains keys in order to be listed first, all other keys from all profiles are lister afterwards. Key are always carried with colon, table group names are not (for visual ease they are four spaces indented).\nUse generate-comparison.py to generate a table from profiles, you will need to install `org-ruby` gem to convert it into HTML format (use `sudo gem install org-ruby` in Ubuntu linux to install this gem). \n\n** Contribution\n Fill free to contribute! There is still a lot of codes, not compared it the table, e.g: MFEM, NgSolve, CalculiX and Salomé + Code_Saturne, ANSYS, NASTRAN, CFD-ACE+, COSMOSWORKS. Comsol(R) description is poor. \n\n"
 with open('README.org', "w") as myfile:
     myfile.write(disclaimer+all_table)
 
@@ -106,4 +112,30 @@ with open('table.html', 'w') as new_f:
                 line = "</tbody>\n</table>\n</div></div>\n"
             new_f.write(line)
 
-# os.system('rm -f table.tmp')
+os.system('rm -f *.tmp')
+os.system('rm -f tmp.org')
+
+# Generate Mediawiki table (for Wikipedia)
+header = '{| class="wikitable sortable"\n|-\n! Feature\n'
+for profile in all_profiles:
+    header += '!'+profile[all_keys[0]]+'\n'
+header += "|-"
+
+all_table = header + "\n"
+for key in all_keys[1:]:
+    if not key[-1]==':':
+        all_table += """| colspan="100500" | '''"""+key+"""''' \n|-\n"""
+        continue
+    all_table += "| "+key+"\n" 
+    for profile in all_profiles:
+        value = profile.get(key)
+        value = str(value).replace("]["," ").replace("[[","[").replace("]]","]")
+        if not value=="None":
+            all_table += "| "+value+"\n"
+        else:
+            all_table += "|"+"\n"
+    all_table += "|-\n"
+all_table = all_table[:-2]+"}\n"
+with open('tmp.wiki', "w") as myfile:
+    myfile.write(all_table)
+    
