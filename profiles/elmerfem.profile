@@ -3,7 +3,7 @@ fullname: Elmer finite element software
 website: [[https://www.csc.fi/elmer][https://www.csc.fi/elmer]]
 license: GNU (L)GPL
 GUI: Yes, partial functionality
-Community: 1000's of users, discussion forum, mailing list [[https://discordapp.com/invite/NeZEBZn][Discord server]]
+Community: 1000's of users, discussion forum, mailing list, [[https://discordapp.com/invite/NeZEBZn][Discord server]]
 Documentation: ElmerSolver Manual, Elmer Models Manual, ElmerGUI Tutorials, etc. (>700 pages of LaTeX documentation available in PDFs)
 
     Mesh
