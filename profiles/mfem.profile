@@ -31,7 +31,7 @@ FE: Arbitrary-order Lagrange elements (continuous and discontinuous), Bernstein 
 Quadrature: Gauss-Legendre, Gauss-Lobatto, and uniform quadrature rules.
 Transient problems: Runge-Kutta, SSP, SDIRK, Adams-Bashforth, Adams-Moulton, Symplectic Integration Algorithm, Newmark method, Generalized-alpha method
 Predifined equations: Miniapps and examples for Laplace, elasticity, Maxwell, Darcy, advection, Euler, Helmholtz, and others
-Visualization: In situ visualization with [[GLVis][https://glvis.org]]. Export to VisIt and ParaView.
+Visualization: In situ visualization with [[https://glvis.org][GLVis]]. Export to VisIt and ParaView.
 Output format: VisIt, ParaView (VTU), GLVis format
 
 

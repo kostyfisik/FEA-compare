@@ -116,20 +116,35 @@ os.system('rm -f *.tmp')
 os.system('rm -f tmp.org')
 
 # Generate Mediawiki table (for Wikipedia)
+
+def remove_url(value):
+    left_index = value.find('[[')
+    if left_index == -1: return value
+    right_index = value.find(']',left_index)+1
+    return value[:left_index]+value[right_index:]
+
 header = '{| class="wikitable sortable"\n|-\n! Feature\n'
 for profile in all_profiles:
     header += '!'+profile[all_keys[0]]+'\n'
 header += "|-"
+import re
 
 all_table = header + "\n"
 for key in all_keys[1:]:
+    if key == "website:": continue
     if not key[-1]==':':
         all_table += """| colspan="100500" | '''"""+key+"""''' \n|-\n"""
         continue
     all_table += "| "+key+"\n" 
     for profile in all_profiles:
         value = profile.get(key)
-        value = str(value).replace("]["," ").replace("[[","[").replace("]]","]")
+        value = str(value)
+        while '[[' in value:
+            value = remove_url(value)
+        value = value.replace('[','')
+        value = value.replace(']','')
+        value = re.sub(r'^https?:\/\/.*[\r\n]*.?', '', value, flags=re.MULTILINE)
+        # value = str(value).replace("]["," ").replace("[[","[").replace("]]","]")
         if not value=="None":
             all_table += "| "+value+"\n"
         else:
