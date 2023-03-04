@@ -1,3 +1,13 @@
+# These are ordered and sectioned keys for comparison table
+#
+# Rules:
+#  - Keys in comparison table will be ordered in same manner as in this file
+#  - Key without colon symbol (which is ':') at the end are treated as section names
+#  - Empty lines are ignored
+#  - Space symbols before and after key or section name are ignored
+#  - Any line starting with # symbol is a comment and it is ignored
+#  - Any other line is treated as a key
+
 name:
 website:
 license:
