@@ -20,7 +20,6 @@ def enrich_keys_from_profiles(all_keys, all_profiles):
         for key in profile.keys():
             if not key in all_keys:
                 all_keys.append(key)
-    return all_keys
 
 
 def get_sorted_keys(main_keys_path: str,
@@ -28,5 +27,5 @@ def get_sorted_keys(main_keys_path: str,
                     reader: Callable[[str], list[str]] = file_reader):
     lines = reader(main_keys_path)
     all_keys = read_main_keys(lines)
-    all_keys = enrich_keys_from_profiles(all_keys, all_profiles)
+    enrich_keys_from_profiles(all_keys, all_profiles)
     return all_keys

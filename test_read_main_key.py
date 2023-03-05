@@ -62,13 +62,34 @@ def test_can_read_from_real_file():
 
 def test_enrichment_not_to_produce_duplicates():
     all_keys = ['name:']
+    old_keys = list(all_keys)
     all_profiles = [{'name:': 'val'}, {'name:': 'val2'}]
-    new_keys = lib.enrich_keys_from_profiles(all_keys, all_profiles)
-    assert(len(all_keys) == len(new_keys))
+    lib.enrich_keys_from_profiles(all_keys, all_profiles)
+    assert(len(all_keys) == len(old_keys))
 
 
 def test_enrichment_works():
-    all_keys = ['name:']
-    all_profiles = [{'test:': 'val'}, {'key2:': 'val2'}]
-    new_keys = lib.enrich_keys_from_profiles(all_keys, all_profiles)
-    assert(len(new_keys) == 3)
+    all_keys = ['name:', 'website:']
+    old_keys = list(all_keys)
+    all_profiles = [{'test:': 'val', 'name:': 'val'},
+                    {'key2:': 'val2', 'test:': 'val2'}]
+    lib.enrich_keys_from_profiles(all_keys, all_profiles)
+    assert(len(old_keys) == 2)
+    assert(len(all_keys) == 4)
+    assert(old_keys[0] == all_keys[0])
+    assert(old_keys[1] == all_keys[1])
+
+
+def test_get_sorted_works():
+    keys_path = 'you can use any, reader is stub'
+    all_profiles = [{'test:': 'val', 'name:': 'val'},
+                    {'key2:': 'val2', 'test:': 'val2'}]
+
+    def stub_reader_all_keys(path):
+        return ['name:', 'website:']
+    all_keys = lib.get_sorted_keys(main_keys_path=keys_path,
+                                   all_profiles=all_profiles,
+                                   reader=stub_reader_all_keys)
+    assert(len(all_keys) == 4)
+    assert(all_keys[0] == 'name:')
+    assert(all_keys[1] == 'website:')
