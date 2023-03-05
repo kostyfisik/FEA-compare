@@ -81,12 +81,11 @@ def test_enrichment_works():
 
 
 def test_get_sorted_works():
+    def stub_reader_all_keys(path):
+        return ['name:', 'website:']
     keys_path = 'you can use any, reader is stub'
     all_profiles = [{'test:': 'val', 'name:': 'val'},
                     {'key2:': 'val2', 'test:': 'val2'}]
-
-    def stub_reader_all_keys(path):
-        return ['name:', 'website:']
     all_keys = lib.get_sorted_keys(main_keys_path=keys_path,
                                    all_profiles=all_profiles,
                                    reader=stub_reader_all_keys)
