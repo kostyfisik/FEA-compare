@@ -9,36 +9,11 @@ import re
 import string
 from glob import glob
 
-from utils.parse_profile import parse_profile
-from utils.read_main_keys import read_main_keys
+from utils.parse_profile import get_profiles
+from utils.read_main_keys import get_sorted_keys
 
-# Read all profiles from `profiles` dir
-all_profiles = []
-for dirname, dirnames, filenames in os.walk('./profiles/'):
-    # print path to all filenames.
-    isFirst = True
-    for filename in filenames:
-        if '.profile' == filename[-8:]:
-            # print("== Reading data from "+filename)
-            profile = {}
-            with open(os.path.join(dirname, filename)) as f:
-                lines = f.readlines()
-            profile = parse_profile(lines)
-            all_profiles.append(profile)
-
-# Sort profiles order - first list better filled profiles
-all_profiles.sort(key=lambda d: len(d), reverse=True)
-
-all_keys = []
-# Read main keys
-with open('main-keys.txt') as f:
-    lines = f.readlines()
-all_keys = read_main_keys(lines)
-# Add all other possible keys
-for profile in all_profiles:
-    for key in profile.keys():
-        if not key in all_keys:
-            all_keys.append(key)
+all_profiles = get_profiles('./profiles/')
+all_keys = get_sorted_keys('main-keys.txt', all_profiles)
 # Generate Org-mode table
 header = "|Feature"
 delimeter = "|--"
