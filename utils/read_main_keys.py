@@ -1,6 +1,6 @@
 from typing import Callable
 
-from utils.file_reader import file_reader
+from utils.filesystem import file_reader
 
 
 def read_main_keys(file_lines: list[str]) -> list[str]:

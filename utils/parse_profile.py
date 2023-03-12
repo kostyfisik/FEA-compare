@@ -1,4 +1,7 @@
 import os
+from typing import Callable
+
+from utils.filesystem import file_reader, search_files
 
 
 def parse_profile(file_lines: list[str]) -> dict[str, str]:
@@ -19,14 +22,12 @@ def parse_profile(file_lines: list[str]) -> dict[str, str]:
 
 def parse_all_profiles(profiles_path: str) -> dict[str, str]:
     all_profiles = []
-    for dirname, _, filenames in os.walk(profiles_path):
-        for filename in filenames:
-            if '.profile' == filename[-8:]:
-                profile = {}
-                with open(os.path.join(dirname, filename)) as f:
-                    lines = f.readlines()
-                profile = parse_profile(lines)
-                all_profiles.append(profile)
+    filenames = search_files(profiles_path, ['*.profile'])
+    for file in filenames:
+        profile = {}
+        lines = file_reader(file)
+        profile = parse_profile(lines)
+        all_profiles.append(profile)
     return all_profiles
 
 

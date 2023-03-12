@@ -1,4 +1,4 @@
-from utils.parse_profile import parse_profile
+from utils.parse_profile import parse_all_profiles, parse_profile
 
 
 def test_can_read_key():
@@ -58,3 +58,8 @@ def test_can_read_from_real_file():
     profile = parse_profile(lines)
     assert(len(profile) > 0)
     assert(len(profile['name:']) > 0)
+
+
+def test_can_parse_multiple_profiles(mocker):
+    all_profiles = parse_all_profiles('mock path')
+    pass
